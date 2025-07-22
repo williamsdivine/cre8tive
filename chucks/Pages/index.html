@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/index.css">
+  <link rel="stylesheet" href="../CSS/jobs.css">
+
+  <style>
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .sign {
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="w-100 vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light container px-4 rounded-pill mt-3" style="background-color:#FEF7F7E5;">
+      <div class="container">
+
+        <a class="navbar-brand" href="#">
+          <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;">
+        </a>
+
+        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-3 sign">
+            <a href="#" class="text-decoration-none text-dark">Sign up</a>
+            <button class="btn btn-dark rounded-pill" style="width: 100px;">Log in</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Top Section -->
+    <div class="d-flex flex-column mt-5 text-center align-items-center justify-content-between">
+      <div class="d-flex flex-row gap-2 shadow mb-5 px-2 py-2 bg-white rounded-pill text-center" style="height: 40px; width: 310px;">
+        <img src="../Asset/Images/fluent_sparkle-28-filled.png" class="img-fluid" style="width: 30px; height: 30px;" alt="">
+        <p>Build your brand, Grow your career</p>
+      </div>
+
+      <h1>Connecting Bold Creatives with Quality <br />Freelance Opportunities</h1>
+      <p>Join a global hub where talents meets opportunity. Discover gigs, showcase your <br /> skills, or hire top-tier creatives in minutes</p>
+      <button class="btn mt-3 rounded-pill" style="width: 180px; height: 45px; background-color: blueviolet; color: white;">Join the network</button>
+    </div>
+
+    <!-- Images row -->
+    <div class="container d-flex flex-row col-12 gap-4 mt-5">
+      <div><img src="../Asset/Images/Image 1.png" class="img-fluid" alt="" /></div>
+      <div><img src="../Asset/Images/Image 2.png" class="img-fluid mt-4" alt="" /></div>
+      <div><img src="../Asset/Images/Image 3.png" class="img-fluid" alt="" /></div>
+      <div><img src="../Asset/Images/Image 4.png" class="img-fluid mt-4" alt="" /></div>
+    </div>
+
+    <!-- Trusted section -->
+    <div class="d-flex align-items-center justify-content-center mt-5">
+      <p class="dispzlay-1 fw-bold" style="font-size: small;">TRUSTED BY</p>
+    </div>
+
+    <div class="container d-flex justify-content-center gap-5 align-items-center" id="trusted">
+      <img src="../Asset/Images/Frame 1 (1).png" class="img-fluid" style="width: 60px; height: 20px;" alt="">
+      <img src="../Asset/Images/Logo.svg.png" class="img-fluid" style="width: 60px; height: 20px;" alt="">
+      <img src="../Asset/Images/Frame 171.png" style="width: 60px; height: 20px;" alt="" />
+      <img src="../Asset/Images/Frame 1 (1).png" class="img-fluid" style="width: 60px; height: 20px;" alt="">
+      <img src="../Asset/Images/Logo.svg.png" class="img-fluid" style="width: 60px; height: 20px;" alt="">
+    </div>
+
+    <!-- Section with toggle buttons -->
+    <div class="container py-4 mt-4">
+      <div class="mb-4">
+        <h2 class="fw-bold">Explore Top Categories</h2>
+        <div class="text-muted mb-3" style="font-size: 1.1rem;">Opportunities tailored to your creative strengths</div>
+
+        <div class="d-flex align-items-center mb-4">
+          <div class="btn-filter">
+            <button class="text-muted filter-btn active-filter" id="show-creatives">Creatives</button>
+            <button class="filter-btn text-muted" id="show-gigs">Gigs available</button>
+          </div>
+          <div class="ms-auto d-flex align-items-center">
+            <button class="filter"><i class="bi bi-filter"></i> Filter</button>
+            <input type="text" class="search-box ms-2 text-muted" placeholder="Search for a creative/design" />
+            <button class="icon-btn" aria-label="Search">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creatives Section -->
+      <div id="creatives-section">
+        <div class="category-card">
+          <div class="d-flex align-items-center mb-3">
+            <img src="../Asset/Images/Ellipse 8.png" alt="Profile" class="profile-img me-3">
+            <div>
+              <div class="fw-semibold">Nuel Chucks</div>
+              <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
+              <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
+                <span class="text-warning me-1">&#9733; 5.0</span>
+                <span class="text-muted ms-2">10 Projects completed</span>
+              </div>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+              <button class="bookmark-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
+                </svg>
+              </button>
+              <button class="get-in-touch-btn">Get in touch</button>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 2147225334.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 2.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 3.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 4.png" class="creative-img" alt="Design">
+            </div>
+          </div>
+          <div class="mt-3">
+            <span class="tag">Web design</span>
+            <span class="tag">Mobile app</span>
+            <span class="tag">Landing page</span>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="d-flex align-items-center mb-3">
+            <img src="../Asset/Images/Ellipse 7.png" alt="Profile" class="profile-img me-3">
+            <div>
+              <div class="fw-semibold">Divine Essen</div>
+              <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
+              <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
+                <span class="text-warning me-1">&#9733; 5.0</span>
+                <span class="text-muted ms-2">10 Projects completed</span>
+              </div>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+              <button class="bookmark-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+                </svg>
+              </button>
+              <button class="get-in-touch-btn">Get in touch</button>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 2147225335.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 2147225333.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Frame 2147225377.png" class="creative-img" alt="Design">
+            </div>
+            <div class="col-6 col-md-3">
+              <img src="../Asset/Images/Image 71 (4).png" class="creative-img" alt="Design">
+            </div>
+          </div>
+          <div class="mt-3">
+            <span class="tag">Web design</span>
+            <span class="tag">Mobile app</span>
+            <span class="tag">Landing page</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gigs Available Section (hidden by default) -->
+      <div id="gigs-section" style="display: none;">
+        <div class="job-card">
+          <img src="../Asset/Images/Ellipse 8.png" class="avatar" alt="Profile">
+          <div class="job-main">
+            <div class="job-title">
+              Web/Landing page design <span class="text-warning fs-6">&#9733; 5.0</span>
+            </div>
+            <div class="job-desc">
+              Looking for a designer to help revamp an existing site for a health brand.
+              <br />
+              Modern, clean aesthetic preferred.
+            </div>
+            <div class="time">
+              <span class="text-muted" style="font-size: 15px;">Posted 2 hours ago</span>
+              <br /><br />
+              <span class="badge">Web design</span> <span class="badge">Landing page</span>
+              <span><i class="bi bi-geo-alt-fill px-1"></i>Remote</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-view px-3">View job</button>
+            <button class="btn-apply px-3">Apply now</button>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="avatar d-flex align-items-center justify-content-center" style="background: #7c3aed; color: #fff; font-weight: 600; font-size: 1.9rem;">
+            DE
+          </div>
+          <div class="job-main">
+            <div class="job-title">
+              Website UX research <span class="text-warning fs-6">&#9733; 5.0</span>
+            </div>
+            <div class="job-desc">
+              Conduct user research and usability testing for our B2B SaaS platform.
+              <br />
+              Create personas and journey maps.
+            </div>
+            <div class="time">
+              <span class="text-muted" style="font-size: 15px;">Posted 2 hours ago</span>
+              <br /><br />
+              <span class="badge">User research</span> <span class="badge">User testing</span>
+              <span><i class="bi bi-geo-alt-fill px-1"></i>Remote</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-view px-3">View job</button>
+            <button class="btn-apply px-3">Apply now</button>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <img src="../Asset/Images/Ellipse 6.png" class="avatar" alt="Profile">
+          <div class="job-main">
+            <div class="job-title">
+              Design Audit of a website <span class="text-warning fs-6">&#9733; 5.0</span>
+            </div>
+            <div class="job-desc">
+              Need a comprehensive UX audit of our e-commerce platform. Looking for
+              <br />
+              actionable insights and recommendations.
+            </div>
+            <div class="time">
+              <span class="text-muted" style="font-size: 15px;">Posted 2 hours ago</span>
+              <br /><br />
+              <span class="badge">Web design</span> <span class="badge">UX audit</span>
+              <span><i class="bi bi-geo-alt-fill px-1"></i>Remote</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-view px-3">View job</button>
+            <button class="btn-apply px-3">Apply now</button>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <img src="../Asset/Images/Ellipse 7.png" class="avatar" alt="Profile">
+          <div class="job-main">
+            <div class="job-title">
+              Mobile App redesign <span class="text-warning fs-6">&#9733; 5.0</span>
+            </div>
+            <div class="job-desc">
+              Complete redesign of our fitness tracking app. Focus on user
+              <br />
+              engagement and modern UI patterns.
+            </div>
+            <div class="time">
+              <span class="text-muted" style="font-size: 15px;">Posted 2 hours ago</span>
+              <br /><br />
+              <span class="badge">Mobile design</span> <span class="badge">App design</span>
+              <span><i class="bi bi-geo-alt-fill px-1"></i>Remote</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn-view px-3">View job</button>
+            <button class="btn-apply px-3">Apply now</button>
+          </div>
+        </div>
+
+        <!-- Load More Button -->
+        <button class="load-more-btn">Load more jobs</button>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="text-center mb-4">
+        <button class="btn btn-outline-secondary rounded-pill px-5 py-2 mb-4">Explore more</button>
+      </div>
+      <div class="hero-section position-relative mb-5">
+        <div class="overlay"></div>
+        <div class="hero-content px-3">
+          <h2 class="fw-bold display-6 mb-3">
+            Discover vetted creative talent or<br />
+            land high-quality freelance
+          </h2>
+          <a href="#" class="btn btn-primary btn-lg rounded-pill px-5 py-3" style="background:#7c3aed; border: 1px solid white; font-size: 15px; margin-top: 20px;">
+            Sign up to continue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center mb-3">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <span class="logo"><img src="../Asset/Images/Logo.png" width="120px" height="38px" style="margin-left: 40px;"></span>
+          </div>
+          <div class="col-md-6 text-center mb-2 mb-md-0">
+            <a href="#">For designers</a>
+            <a href="#">Hire talent</a>
+            <a href="#">Blog</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="col-md-3 text-end social-icons" style="margin-left: 940px;">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between small">
+          <span style="margin-left: 37px;">© 2025 Cre8tiv. All rights reserved.</span>
+          <span style="margin-right: 30px;">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms and conditions</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="../JS/jquery.min.js"></script>
+  <script src="../JS/index.js"></script>
+</body>
+</html>
