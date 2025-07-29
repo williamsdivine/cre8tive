@@ -1,4 +1,5 @@
 <?php
+//methods for each endpoint (user signup, login, verify otp, update profile)
 require_once __DIR__."/../config/send_mail.php";
 require_once __DIR__."/../models/otp_email_template.php";
 
@@ -81,6 +82,38 @@ class User {
             return ["message" => "OTP verified. Account activated."];
         }
         return ["error" => "Invalid OTP"];
+    }
+
+    /**
+     * Update the user's profile information (fullname and description only).
+     *
+     * @param string $email The user's email address (used to identify the user).
+     * @param string $fullname The user's new full name.
+     * @param string $description The user's profile description.
+     * @return array Result of the update operation.
+     */
+    public function updateProfile($email, $fullname, $description) {
+        // Check for empty fields
+        if (empty($fullname) || empty($email) || empty($description)) {
+            return ["error" => "All fields are required"];
+        }
+
+        // Validate email format
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return ["error" => "Invalid email format"];
+        }
+
+        // Update the user's profile (fullname and description only)
+        $stmt = $this->conn->prepare("UPDATE users SET fullname = ?, description = ? WHERE email = ?");
+        $stmt->bind_param("sss", $fullname, $description, $email);
+        $result = $stmt->execute();
+        $stmt->close();
+
+        if ($result) {
+            return ["statuscode" => 200, "message" => "Profile updated successfully"];
+        } else {
+            return ["error" => "Failed to update profile"];
+        }
     }
 
     private function sendOtpEmail($email, $fullname, $otp) {
