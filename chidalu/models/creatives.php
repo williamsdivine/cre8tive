@@ -1,4 +1,5 @@
 <?php
+//model method for creatives (add, list, list all, get, delete)
 
 class Creatives {
     private $conn;
