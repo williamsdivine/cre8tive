@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRE8TIV - Divine Essen Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      background-color: #fafafb;
+    }
+    .profile-avatar {
+      width: 54px;
+      height: 54px;
+      background-color: #150653;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      padding: 15px;
+    }
+    .work-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .work-stats {
+      font-size: 0.95rem;
+      color: #888;
+    }
+    .tabs-custom button {
+      margin-right: 7px;
+      margin-bottom: 10px;
+    }
+    .search-bar-custom {
+      width: 260px;
+    }
+    .list1 a{
+        color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<div class="container my-4">
+    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill  " style="background-color:#F8F8F8E5; width: 85%; ">
+        <div class="container " >
+      
+           <a class="navbar-brand" href="#">
+             <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;">
+           </a>
+
+      
+            <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+             </button>
+
+      
+           <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+              <ul class="navbar-nav mx-auto gap-3">
+                <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Overview</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
+               <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
+               <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+              </ul>
+
+             <div class="d-flex align-items-center gap-3 sign">
+                <span class="fs-5">
+                  <i class="bi bi-envelope-arrow-up"></i>
+                </span>
+
+                <span class="me-2">
+                  <i class="bi bi-bell fs-5"></i>
+                </span>
+                 
+                 <div class="dropdown">
+                    <div class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" alt="">
+                       </div>
+
+                        <ul class="dropdown-menu">
+                 <li><a class="dropdown-item" href="#">Option 1</a></li>
+    <li><a class="dropdown-item" href="#">Option 2</a></li>
+    <li><a class="dropdown-item" href="#">Option 3</a></li>
+  </ul>
+</div>
+
+              </div> 
+             </div>
+            </div>
+        </div>
+      </nav> 
+
+  <!-- <nav class="navbar px-4 py-2 mb-4 rounded-pill " style="background-color: rgb(247, 245, 251);">
+    <div class="d-flex">
+      <img src="../Asset/Images/Logo Black.png" alt="CRE8TIV Logo" class="me-2" style="height:32px;">
+    </div>
+
+    <div>
+      <ul class="nav nav-pills list1 ">
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="#">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Browse jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hire creatives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+      
+    <span class="fs-5">
+        <i class="bi bi-envelope-arrow-up"></i>
+    </span>
+
+      <span class="me-2">
+        <i class="bi bi-bell fs-5"></i>
+      </span>
+      <img src="../Asset/Images/Ellipse 8.png" alt="Profile" style="width:38px; height:38px; border-radius:50%;">
+    </div>
+  </nav> -->
+  </div>
+
+  <div class="container-fluid mb-5 mx-auto my-5" style="width: 1300px;">
+    <!-- Welcome section -->
+    <div class="mb-3 d-flex justify-content-between" style="border-bottom: 1px solid rgb(223, 216, 216);">
+        <div>
+        <div class="fw-semibold fs-6">Welcome back, Divine!</div>
+        <p class="text-muted" style="font-size:0.96em;">Manage and grow your profile</p>
+        </div>
+
+        <span>
+        <button class="btn btn-light me-2">Post job <i class="bi bi-arrow-up"></i></button>
+        <button class="btn btn-dark me-2" style="border-radius: 17px;">Share your work +</button>
+        </span>
+    </div>
+
+    <!-- Profile Header -->
+    <div class=" align-items-center mb-3">
+
+      <div class="d-flex mb-3">
+      <div class="profile-avatar me-3">DE </div>
+      <span class="status-badge mt-2 rounded-pill border px-2 py-2" style="color: green;"><i class="bi bi-dot"></i>Available now</span>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center w-100 ">
+        <div>
+          <p class="fw-bold fs-5">Divine Essen</p>
+        </div>
+
+        <div>
+          <button class="btn rounded-pill border ms-auto">Edit profile <i class="bi bi-pencil"></i></button>
+        </div>
+
+      </div>
+      <p class="text-muted mb-3">A Ui/Ux designer passionate about building user centered and intuitive <br>digital products.</p>
+
+
+    <!-- Tabs -->
+    <div class="d-flex justify-content-between" style="border-bottom: 1px solid rgb(223, 216, 216);">
+
+    <div class="tabs-custom d-flex mb-3 flex-wrap gap-3">
+      <button class="btn rounded-pill border btn-sm" style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
+      <button class="btn rounded-pill border btn-sm">Liked post</button>
+      <button class="btn rounded-pill border btn-sm">Services</button>
+      <button class="btn rounded-pill border btn-sm">Saved profile</button>
+      <button class="btn rounded-pill border btn-sm">Posted jobs</button>
+    </div>
+
+    <!-- Filter and search -->
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <button class="btn  me-2" data-bs-toggle="dropdown"><i class="bi bi-filter"></i> Filter</button>
+      <input type="search" class="form-control search-bar-custom rounded-pill border" placeholder="Search creatives or tags"><i class="bi bi-search bg-primary text-white px-1" id="search" style=" border-radius: 50%; right: 9%; position: relative;"></i>
+      
+    </div>
+
+    </div>
+    <!-- Work grid -->
+    <div class="row g-4 mt-3">
+      <div class="col-sm-3">
+        <div class="work-card">
+          <img src="../Asset/Images/Frame 2147225333.png" alt="Design work">
+          <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
+            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+            <span><i class="bi bi-eye"></i> 1.6k</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="work-card">
+          <img src="../Asset/Images/Frame 2.png" alt="Design work">
+          <div class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats">
+            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+            <span><i class="bi bi-eye"></i> 1.6k</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="work-card">
+          <img src="../Asset/Images/Frame 3.png" alt="Design work">
+          <div class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats">
+            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+            <span><i class="bi bi-eye"></i> 1.6k</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="work-card">
+          <img src="../Asset/Images/Frame 4.png" alt="Design work">
+          <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
+            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+            <span><i class="bi bi-eye"></i> 1.6k</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS, Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

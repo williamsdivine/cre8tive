@@ -1,0 +1,165 @@
+ body {
+            background: #fafafa;
+        }
+        .profile-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .category-card {
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 1.5rem;
+        }
+        .creative-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+        .filter {
+            border: none;
+            background-color: #fff;
+        }
+        .tag {
+            background: #f3f3f3;
+            border-radius: 16px;
+            padding: 0.3rem 1rem;
+            font-size: 0.95rem;
+            margin-right: 0.5rem;
+        }
+        .get-in-touch-btn {
+            background: #000;
+            color: #fff;
+            border-radius: 22px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            border: none;
+            white-space: nowrap;
+
+        }
+        .filter-btn {
+            border: 1px solid #eee;
+            border-radius: 18px;
+            padding: 0.35rem 1.2rem;
+            margin-right: 0.5rem;
+            font-weight: 500;
+        }
+        .active-filter {
+            background: #fff;
+            color: #000;
+        }
+        #gigs {
+            background: none;
+        }
+        .search-box {
+            border-radius: 18px;
+            border: 1px solid #eee;
+            padding: 0.35rem 1.2rem;
+            width: 260px;
+        }
+        .icon-btn {
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.5rem;
+        }
+        .bookmark-btn {
+            border: none;
+            background: #fff;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+        }
+        .btn-filter {
+            background-color: #f3f3f3;
+            border-radius: 40px;
+            padding: 7px;
+        }
+
+    .hero-section {
+      background: url('../Asset/Images/Image_fx\ \(21\)\ 1.png') center center/cover no-repeat;
+      min-height: 350px;
+      border-radius: 24px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 24px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+    }
+    .footer {
+      background: #11182f;
+      color: #fff;
+      padding: 32px 0 16px 0;
+    }
+    .footer a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+    }
+    .footer .social-icons i {
+      font-size: 1.3rem;
+      margin: 0 8px;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: 220px;
+      }
+    }
+
+    #trusted {
+      margin-right: 65px;
+    }
+    #trusted > img{
+      margin-right: 70px;
+    }
+
+    @media (max-width: 576px) {
+  .profile-img {
+    width: 40px;
+    height: 40px;
+  }
+  .creative-img {
+    height: auto;
+  }
+  .get-in-touch-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  .filter-btn {
+    padding: 0.3rem 1rem;
+    font-size: 0.9rem;
+  }
+  .footer .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
