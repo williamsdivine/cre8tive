@@ -16,7 +16,7 @@
                <a href="./index.html"> <img src="../Asset/Images/Logo Black.png" width="95px" height="35px" class="img-fluid  py-4  " alt=""></a>
                     <div class=" border border-dark-light px-4 py-3 " style="border-radius: 15px; font-size: 70%;">
                         <h5 class="head">Check your email</h5>
-                        <p>We've sent an OTP to your email essendivine@gmail.com</p>
+                        <p id="emailDisplay">We've sent an OTP to your email essendivine@gmail.com</p>
                         
                          
                         
@@ -25,7 +25,7 @@
                             <input type="email" placeholder="Enter the OTP sent to your email " class=" mt-2 px-3   " style="width: 97%; height: 43px; border-radius: 17px; border: 1px solid #ccc; outline: 0px; ">
                         </div>
 
-                        <a href="./login.html"><button class=" btn rounded-pill mt-4 " style="width: 97%; height: 46px;  border: 0px; color: white; background-color: blueviolet;font-size: 100%;">Submit OTP</button></a>
+                        <button class="btn rounded-pill mt-4" id="submitOtpBtn" style="width: 97%; height: 46px;  border: 0px; color: white; background-color: blueviolet;font-size: 100%;">Submit OTP</button>
 
                    </div>
                    <div class=" d-flex justify-content-between py-2 px-4 footer-text" style="font-size: 70%;">
@@ -53,10 +53,16 @@
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
       </main>
 
-    <script>
+          <script>
+  // Display user email from localStorage
+  const userEmail = localStorage.getItem('userEmail');
+  if (userEmail) {
+    document.getElementById('emailDisplay').textContent = `We've sent an OTP to your email ${userEmail}`;
+  }
+
   let timerDisplay = document.querySelector('.footer-text p');
   let otpInput = document.querySelector('input[type="email"]');
-  let submitBtn = document.querySelector('button');
+  let submitBtn = document.getElementById('submitOtpBtn');
 
   let timeLeft = 30; 
 
@@ -76,6 +82,58 @@
 
     timeLeft--;
   }, 1000);
+
+  // Handle OTP submission
+  submitBtn.addEventListener('click', function() {
+    const otp = otpInput.value;
+    const userEmail = localStorage.getItem('userEmail');
+    
+    if (!otp) {
+      alert('Please enter the OTP');
+      return;
+    }
+    
+    // Show loading state
+    const button = this;
+    const originalText = button.textContent;
+    button.textContent = 'Verifying...';
+    button.disabled = true;
+    
+    // Prepare data for API
+    const otpData = {
+      email: userEmail,
+      otp: otp
+    };
+    
+    // Make API call to verify OTP
+    fetch('http://your-backend-url/api/verify-otp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(otpData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Clear localStorage
+        localStorage.removeItem('userEmail');
+        // Redirect to login page or dashboard
+        window.location.href = '../Pages/login.html';
+      } else {
+        alert(data.message || 'Invalid OTP. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    })
+    .finally(() => {
+      // Reset button state
+      button.textContent = originalText;
+      button.disabled = false;
+    });
+  });
 </script>
 
 </body>

@@ -2,32 +2,30 @@
 
 $(document).ready(function() {
     const signup = (e) => {
-        e.preventDefault()
-        const url = "http://localhost/cre8tive/chidalu/routes/api.php?endpoint=signup"
+        e.preventDefault();
+        const url = "http://localhost/cre8tive/chidalu/routes/api.php?endpoint=signup";
         const formData = new FormData(signupForm);
-        console.log(FormData) 
+        console.log(formData);
         $.ajax({
             url: url,
             method: "POST",
             data: formData,
             dataType: "json",
             success: (response) => {
-                const json = JSON.parse(response);
                 console.log(response);
-                if (json.statuscode == 200) {
-                    alert(json.status);
+                if (response.statuscode == 200) {
+                    alert(response.status);
                 } else {
-                    alert(json.status);
+                    alert(response.status);
                 }
             },
             error: (err) => {
                 console.log(err);
             }
-        })
-    }
+        });
+    };
 
-     $("#signupBtn").on("click", (e) =>{
-        
-        // signup(e);
-    })
+    $("#signupBtn").on("click", (e) => {
+        signup(e);
+    });
 });
