@@ -302,7 +302,7 @@
     </nav>
   </div>
 
-  <div class="container-fluid mb-5 mx-auto my-5" style="width: 1300px;">
+  <div class="container-fluid mb-5 mx-auto my-5" style="max-width:1300px;">
     <!-- Welcome section -->
     <div class="mb-3 d-flex justify-content-between" style="border-bottom: 1px solid rgb(223, 216, 216);">
       <div>
@@ -315,11 +315,12 @@
       </span>
     </div>
 
+
     <!-- Profile Header -->
     <div class="align-items-center mb-3">
       <div class="d-flex mb-3">
-        <div class="profile-avatar me-3">DE</div>
-        <span class="status-badge mt-2 rounded-pill border px-2" style="color: green; font-size: 80%; padding-top: 10px;">
+        <div class="profile-avatar me-3">DE </div>
+        <span class="status-badge mt-2 rounded-pill border px-2 " style="color: green; font-size: 80%; padding-top: 10px; ">
           <i class="bi bi-dot"></i> Available now
         </span>
       </div>
@@ -328,42 +329,45 @@
           <p class="fw-bold fs-5">Divine Essen</p>
         </div>
         <div>
-          <!-- Added id for JS targeting -->
           <button id="editProfileBtn" class="btn rounded-pill border ms-auto" style="font-size: 80%; margin-right: 10px;">
             Edit profile <i class="bi bi-pencil"></i>
           </button>
         </div>
       </div>
-      <p class="text-muted mb-3">
-        A Ui/Ux designer passionate about building user centered and intuitive <br />
-        digital products.
-      </p>
+      <p class="text-muted mb-3">A Ui/Ux designer passionate about building user centered and intuitive <br>digital products.</p>
+
 
       <!-- Tabs -->
-      <div class="d-flex justify-content-between" style="border-bottom: 1px solid rgb(223, 216, 216); margin-top: 3%;">
-        <div class="tabs-custom d-flex mb-3 flex-wrap gap-3">
-          <button class="btn rounded-pill border btn-sm" style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
-          <button class="btn rounded-pill border btn-sm">Liked post</button>
-          <button class="btn rounded-pill border btn-sm">Services</button>
-          <button class="btn rounded-pill border btn-sm">Saved profile</button>
-          <button class="btn rounded-pill border btn-sm">Posted jobs</button>
-        </div>
-        <!-- Filter and Search -->
-        <div class="d-flex gap-3 col-sm-12 col-md-7 py-1 mb-4" style="padding-left: 25%;">
-          <button class="btn border border-dark-light vh-25 w-auto" style="width: 30%; background-color: white; border-radius: 13px;">
-            <i class="bi bi-filter"></i>Filter
-          </button>
-          <div class="border border rounded-pill d-flex gap-5 w-75 vh-25" style="width: 70%;">
-            <input type="text" placeholder="Search creatives, services or tags" class="px- my-2"
-              style="border:0px; outline:none; width: 72%; height: 50%; margin-left: 3%; font-size: 0.8rem;">
-            <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-2 px-3" style="width: 3%; height: 25px;" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3" 
+     style="border-bottom: 1px solid rgb(223, 216, 216); margin-top: 3%; padding-bottom: 1rem;">
+
+  <!-- Tabs -->
+  <div class="tabs-custom d-flex flex-wrap gap-2">
+    <button class="btn rounded-pill border btn-sm" style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
+    <button class="btn rounded-pill border btn-sm">Liked post</button>
+    <button class="btn rounded-pill border btn-sm">Services</button>
+    <button class="btn rounded-pill border btn-sm">Saved profile</button>
+    <button class="btn rounded-pill border btn-sm">Posted jobs</button>
   </div>
 
-  <div class="container row">
+  <!-- Filter + Search -->
+  <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center mb-2 gap-2" style="max-width: 400px;">
+
+    <!-- Filter Button -->
+    <button class="btn w-auto px-3" style="background-color: white; border-radius: 13px;">
+      <i class="bi bi-filter"></i> Filter
+    </button>
+
+          <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
+            <input type="text" placeholder="Search creatives, services or tags" class="my-2"
+              style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
+            <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3" style="width: 3%; height: 25px;" alt="">
+          </div>
+        </div>
+        </div>
+
+    </div>
+     <div class="container row">
     <div class="py-1 col-11 flex-grow-1 border-bottom border-1 border-dark-light" style="margin-left: 10%;"></div>
   </div>
   <div class="d-flex flex-column align-items-center py-3">
@@ -372,35 +376,49 @@
     <p style="font-size: 80%; margin-left: 2%;">Share your best work and services to get hired</p>
     <a href="./dashboard-upload.html"><button class="btn btn-dark rounded-pill w-100" style="height: 80%; font-size: 80%; margin-left: 6%;">Share your work +</button></a>
   </div>
+    </div>
+  </div>
+
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row align-items-center mb-3">
-        <div class="col-md-3 mb-2 mb-md-0">
-          <span class="logo"><img src="../Asset/Images/Logo.png" width="120px" height="38px" alt="Logo" style="margin-left: 40px" /></span>
-        </div>
-        <div class="col-md-6 text-center mb-2 mb-md-0">
-          <a href="#">For designers</a>
-          <a href="#">Hire talent</a>
-          <a href="#">Blog</a>
-          <a href="#">Support</a>
-        </div>
-        <div class="col-md-3 text-end social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between small">
-        <span style="margin-left: 37px;">© 2025 Cre8tiv. All rights reserved.</span>
-        <span style="margin-right: 30px;">
-          <a href="#">Privacy Policy</a> | <a href="#">Terms and conditions</a>
-        </span>
-      </div>
-    </div>
-  </footer>
+      <footer class="footer py-4" style="background-color:#11182f">
+          <div class="container">
+            <div class="row align-items-center text-center text-md-start mb-3">
+              
+              
+              <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
+                <img src="../Asset/Images/Logo.png" width="120" height="38" alt="Logo">
+              </div>
 
+              
+              <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
+                <a href="#" class="mx-2 text-decoration-none ">For designers</a>
+                <a href="#" class="mx-2 text-decoration-none ">Hire talent</a>
+                <a href="#" class="mx-2 text-decoration-none ">Blog</a>
+                <a href="#" class="mx-2 text-decoration-none ">Support</a>
+              </div>
+
+              
+              <div class="col-12 col-md-3 text-center text-md-end">
+                <a href="#" class="mx-2 "><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mx-2 "><i class="fab fa-instagram"></i></a>
+                <a href="#" class="mx-2 "><i class="fab fa-whatsapp"></i></a>
+              </div>
+
+            </div>
+
+            
+            <div class="row small text-center text-md-between">
+              <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
+                © 2025 Cre8tiv. All rights reserved.
+              </div>
+              <div class="col-12 col-md-6 text-center text-md-end">
+                <a href="#" class="text-decoration-none">Privacy Policy</a> | 
+                <a href="#" class="text-decoration-none">Terms and Conditions</a>
+              </div>
+            </div>
+          </div>
+        </footer>
   <!-- Modal backdrop for background blur -->
   <div id="modal-backdrop"></div>
 
