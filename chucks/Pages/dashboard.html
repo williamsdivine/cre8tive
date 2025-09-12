@@ -56,7 +56,7 @@
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       background-color: rgba(0,0,0,0.4);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(1px);
       z-index: 1040;
       display: none;
     }
@@ -359,7 +359,7 @@
     <div class="align-items-center mb-3">
       <div class="d-flex mb-3">
         <div class="profile-avatar me-3">DE </div>
-        <span class="status-badge mt-2 rounded-pill border px-2 " style="color: green; font-size: 80%; padding-top: 10px; ">
+        <span class="status-badge mt-2 rounded-pill border px-2" style="color: green; font-size: 80%; padding-top: 10px;" id="avail">
           <i class="bi bi-dot"></i> Available now
         </span>
       </div>
@@ -614,17 +614,20 @@
     // Availability toggle logic
     const toggleAvail = document.getElementById('toggleAvail');
     const availChip = document.getElementById('availChip');
-
+    const updateAvail = document.getElementById('avail');
 
     function updateAvailabilityChip(checked) {
       if (checked) {
         availChip.innerHTML = '<span style="font-size:1.14em;font-weight:600;">•</span> Available now';
         availChip.style.color = 'green';
         availChip.style.backgroundColor = 'transparent';
+        updateAvail.innerHTML = '<i class="bi bi-dot"></i> Available now';
       } else {
         availChip.innerHTML = '<span style="font-size:1.14em;font-weight:600;">•</span> Not available';
         availChip.style.color = 'grey';
         availChip.style.backgroundColor = 'transparent';
+        updateAvail.innerHTML = '<i class="bi bi-dot"></i> Not available';
+
       }
     }
 

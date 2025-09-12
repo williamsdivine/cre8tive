@@ -127,18 +127,18 @@
                <a href="./overview-share.html"><button class="btn  btn-dark rounded-pill w-auto px-4" style="height:40px ;  font-size: 80%;"> Continue</button></a>
               </div>
           </div>
-                 
-          
             
         </section>
+
          <div class="upload-box my-3">
-      <i class="bi bi-images text-dark"></i>
-      <div><a href="#">Upload an image or video</a></div>
-      <small>High resolution images and videos ( supported format jpg, png, mp4, gif )</small>
-      <div>Or</div>
-      <div><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Upload a link to your site</a></div>
-      <small>For developers, paste a link to your website</small>
-    </div>
+          <i class="bi bi-images text-dark"></i>
+          <label for="fileUpload" class="text-dark">Upload an image or video</label>
+          <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png, .gif, .mp4"/>
+          <small>High resolution images and videos ( supported format jpg, png, mp4, gif )</small>
+          <div>Or</div>
+          <div><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Upload a link to your site</a></div>
+          <small>For developers, paste a link to your website</small>
+        </div>
       
     <div class="modal" id="login-modal" style="margin-top: 10%" tabindex="-1">
     <div class="modal-dialog">

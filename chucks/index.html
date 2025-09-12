@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="./CSS/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./CSS/bootstrap-icons-1.13.1/fonts/bootstrap-icons.woff">
+  <link rel="stylesheet" href="./CSS/bootstrap-icons-1.13.1/fonts/bootstrap-icons.woff2">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
   <link rel="stylesheet" href="../chucks/CSS/index.css">
   <link rel="stylesheet" href="../chucks/CSS/jobs.css">
 
@@ -42,7 +45,7 @@
           <ul class="navbar-nav mx-auto gap-3">
             <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Home</a></li>
             <li class="nav-item"><a class="nav-link text-dark" href="./Pages/browse-jobs.html">Browse Jobs</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="./Hire-Creatives.html">Hire Creatives</a></li>
             <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
           </ul>
 
@@ -93,21 +96,23 @@
         <h2 class="fw-bold">Explore Top Categories</h2>
         <div class="text-muted mb-3" style="font-size: 1.1rem;">Opportunities tailored to your creative strengths</div>
 
-        <div class="d-flex align-items-center mb-4">
+        <div class="d-flex align-items-center mb-4 justify-content-between">
           <div class="btn-filter">
             <button class="text-muted filter-btn active-filter" id="show-creatives">Creatives</button>
             <button class="filter-btn text-muted" id="show-gigs">Gigs available</button>
           </div>
-          <div class="ms-auto d-flex align-items-center">
-            <button class="filter"><i class="bi bi-filter"></i> Filter</button>
-            <input type="text" class="search-box ms-2 text-muted" placeholder="Search for a creative/design" />
-            <button class="icon-btn" aria-label="Search">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
+
+          <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2" style="max-width: 400px;">
+            <button class="btn w-auto px-3" style="background-color: white; border-radius: 13px;">
+              <i class="bi bi-filter"></i> Filter
             </button>
-          </div>
+        
+        <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
+          <input type="text" placeholder="Search creatives, services or tags" class="my-2"
+            style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
+          <img src="./Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3" style="width: 3%; height: 25px;" alt="">
+        </div>
+      </div>
         </div>
       </div>
 
@@ -135,7 +140,7 @@
           </div>
           <div class="row g-3">
             <div class="col-6 col-md-3">
-              <img src="../chucks/Asset/Images/Frame 2147225334.png" class="creative-img" alt="Design">
+              <img src="../chucks/Asset/Images/IMG 2.jpg" class="creative-img" alt="Design">
             </div>
             <div class="col-6 col-md-3">
               <img src="../chucks/Asset/Images/Frame 2.png" class="creative-img" alt="Design">
@@ -176,13 +181,13 @@
           </div>
           <div class="row g-3">
             <div class="col-6 col-md-3">
-              <img src="../chucks/Asset/Images/Frame 2147225335.png" class="creative-img" alt="Design">
+              <img src="../chucks/Asset/Images/img 4.jpg" class="creative-img" alt="Design">
             </div>
             <div class="col-6 col-md-3">
-              <img src="../chucks/Asset/Images/Frame 2147225333.png" class="creative-img" alt="Design">
+              <img src="../chucks/Asset/Images/img 6.jpg" class="creative-img" alt="Design">
             </div>
             <div class="col-6 col-md-3">
-              <img src="../chucks/Asset/Images/Frame 2147225377.png" class="creative-img" alt="Design">
+              <img src="../chucks/Asset/Images/IMG 1.jpg" class="creative-img" alt="Design">
             </div>
             <div class="col-6 col-md-3">
               <img src="../chucks/Asset/Images/Image 71 (4).png" class="creative-img" alt="Design">
