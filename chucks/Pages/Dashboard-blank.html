@@ -444,8 +444,10 @@
 
     <div class="d-flex align-items-center gap-3 mb-3">
       <div class="pic-avatar text-white">DE</div>
-      <button type="button" class="upload-pic-btn rounded-pill border bg-white" tabindex="0">
-        Upload photo
+      <!-- <button type="button" class="upload-pic-btn rounded-pill border bg-white" tabindex="0">
+        Upload photo -->
+        <label for="fileUpload" class="text-dark fw-semibold" style="cursor: pointer;">Upload image</label>
+        <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png"/>
       </button>
     </div>
 
