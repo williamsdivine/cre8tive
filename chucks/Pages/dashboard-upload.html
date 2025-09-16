@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
   <style>
@@ -25,10 +26,12 @@
       gap: 12px;
       cursor: default;
     }
+
     .upload-box i {
       font-size: 3rem;
       color: #6f42c1;
     }
+
     .upload-box a {
       color: #140928;
       text-decoration: underline;
@@ -44,14 +47,17 @@
       background: white;
       box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
     }
+
     h5 {
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
+
     #text-p {
       color: #4a4a4a;
       margin-bottom: 2rem;
     }
+
     input.form-control {
       border-radius: 20px;
       padding: 10px 20px;
@@ -59,6 +65,7 @@
       border: 1px solid #ddd;
       margin-bottom: 20px;
     }
+
     .upload-btn {
       background-color: #7c54d8;
       border: none;
@@ -71,86 +78,95 @@
     }
   </style>
 </head>
+
 <body>
-    <main class="w-100  ">
-         <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill  " style="background-color:#F8F8F8E5; width: 70%; ">
-        <div class="container " >
-      
-           <a class="navbar-brand" href="./index.html">
-             <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;">
-           </a>
+  <main class="w-100  ">
+    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill  "
+      style="background-color:#F8F8F8E5; width: 70%; ">
+      <div class="container ">
 
-      
-            <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-             </button>
+        <a class="navbar-brand" href="./index.html">
+          <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;">
+        </a>
 
-      
-           <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-              <ul class="navbar-nav mx-auto gap-3">
-                <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Overview</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+
+        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Overview</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-3 sign">
+            <span class="fs-5"><i class="bi bi-bell-fill"></i></span>
+            <span class="me-2"><i class="bi bi-envelope-check-fill"></i></span>
+
+
+            <div class="dropdown">
+              <div class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" class="img-fluid" alt="">
+              </div>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a>
+                </li>
               </ul>
-
-             <div class="d-flex align-items-center gap-3 sign">
-                <span class="fs-5"><i class="bi bi-bell-fill"></i></span> 
-                <span class="me-2"><i class="bi bi-envelope-check-fill"></i></span>
-            
-                 
-                 <div class="dropdown">
-                    <div class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" class="img-fluid" alt="">
-                       </div>
-
-                        <ul class="dropdown-menu">
-                       <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
-                 <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
-  </ul>
-</div>
-
-              </div> 
-             </div>
             </div>
-        </div>
-      </nav> 
 
-       <section class="d-flex justify-content-between align-items-center ">
-          <div class="container  row  " style="margin-left: 23% ; padding-top: 3%;">
-              <div class=" col-sm-12 col-md-8  "style="" >
-                  <h5 >Start building your Project</h5>
-                <p>Upload images, video, and links of your work to your profile</p>
-              </div>
-              <div class=" d-flex gap-3 col-4">
-               <a href="./Dashboard-blank.html"><button class=" btn border border-dark-light rounded-pill w-auto px-4" style="height:40px;  font-size: 80%; background-color: white;">Cancel</button></a>
-               <a href="./overview-share.html"><button class="btn  btn-dark rounded-pill w-auto px-4" style="height:40px ;  font-size: 80%;"> Continue</button></a>
-              </div>
           </div>
-            
-        </section>
-
-         <div class="upload-box my-3">
-          <i class="bi bi-images text-dark"></i>
-          <label for="fileUpload" class="text-dark fw-semibold" style="cursor: pointer;">Upload an image or video</label>
-          <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png, .gif, .mp4"/>
-          <small>High resolution images and videos ( supported format jpg, png, mp4, gif )</small>
-          <div>Or</div>
-          <div><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" class="fw-semibold">Upload a link to your site</a></div>
-          <small>For developers, paste a link to your website</small>
         </div>
-      
+      </div>
+      </div>
+    </nav>
+
+    <section class="d-flex justify-content-between align-items-center ">
+      <div class="container  row  " style="margin-left: 23% ; padding-top: 3%;">
+        <div class=" col-sm-12 col-md-8  " style="">
+          <h5>Start building your Project</h5>
+          <p>Upload images, video, and links of your work to your profile</p>
+        </div>
+        <div class=" d-flex gap-3 col-4">
+          <a href="./Dashboard-blank.html"><button class=" btn border border-dark-light rounded-pill w-auto px-4"
+              style="height:40px;  font-size: 80%; background-color: white;">Cancel</button></a>
+          <a href="./overview-share.html"><button class="btn  btn-dark rounded-pill w-auto px-4"
+              style="height:40px ;  font-size: 80%;"> Continue</button></a>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="upload-box my-3">
+      <i class="bi bi-images text-dark"></i>
+      <label for="fileUpload" class="text-dark fw-semibold" style="cursor: pointer;">Upload an image or video</label>
+      <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png, .gif, .mp4" />
+      <small>High resolution images and videos ( supported format jpg, png, mp4, gif )</small>
+      <div>Or</div>
+      <div><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" class="fw-semibold">Upload a link to your
+          site</a></div>
+      <small>For developers, paste a link to your website</small>
+    </div>
+
     <div class="modal" id="login-modal" style="margin-top: 10%" tabindex="-1">
-    <div class="modal-dialog">
-    <div class="modal-content" id="modal-content">
-    <h5>Website link</h5>
-    <p id="text-p">Paste the link to your website</p>
-    <input type="text" class="form-control" placeholder="Enter link to your website"/>
-    <button type="button" class="upload-btn">Upload</button>
-  </div>
-  </div>
-</div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    </main>
+      <div class="modal-dialog">
+        <div class="modal-content" id="modal-content">
+          <h5>Website link</h5>
+          <p id="text-p">Paste the link to your website</p>
+          <input type="text" class="form-control" placeholder="Enter link to your website" />
+          <button type="button" class="upload-btn">Upload</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+  </main>
 </body>
+
 </html>

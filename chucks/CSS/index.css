@@ -127,6 +127,23 @@
       font-size: 1.3rem;
       margin: 0 8px;
     }
+
+    .creative-img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      /* Optional: smooth rounding */
+      border-radius: 0.5rem;
+    }
+
+    .creative-img:hover {
+      transform: scale(1.3); /* pop out */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* subtle shadow */
+      z-index: 10; /* appear above others */
+    }
+
+
+
+
     @media (max-width: 768px) {
       .hero-section {
         min-height: 220px;

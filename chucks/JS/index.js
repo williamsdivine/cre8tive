@@ -2,10 +2,12 @@
     const showGigsBtn = document.getElementById('show-gigs');
     const creativesSection = document.getElementById('creatives-section');
     const gigsSection = document.getElementById('gigs-section');
+    const explore = document.getElementById('explore');
 
     showCreativesBtn.addEventListener('click', () => {
       creativesSection.style.display = 'block';
       gigsSection.style.display = 'none';
+      explore.style.display = 'block';
 
       showCreativesBtn.classList.add('active-filter');
       showCreativesBtn.classList.remove('text-muted');
@@ -17,6 +19,7 @@
     showGigsBtn.addEventListener('click', () => {
       creativesSection.style.display = 'none';
       gigsSection.style.display = 'block';
+      explore.style.display = 'none';
 
       showGigsBtn.classList.add('active-filter');
       showGigsBtn.classList.remove('text-muted');

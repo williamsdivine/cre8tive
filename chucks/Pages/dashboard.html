@@ -1,647 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>CRE8TIV - Divine Essen Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRE8TIV - Divine Essen Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="../CSS/index.css" />
-  <style>
-    body {
-      background-color: #fafafb;
-    }
-    .profile-avatar {
-      width: 54px;
-      height: 54px;
-      background-color: #150653;
-      color: #fff;
-      border-radius: 50%;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      padding: 15px;
-    }
-    .work-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .work-stats {
-      font-size: 0.95rem;
-      color: #888;
-    }
-    .tabs-custom button {
-      margin-right: 7px;
-      margin-bottom: 10px;
-    }
-    .search-bar-custom {
-      width: 260px;
-    }
-    .list1 a {
-      color: black;
-    }
-
-    /* Modal backdrop */
-    #modal-backdrop {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(0,0,0,0.4);
-      backdrop-filter: blur(1px);
-      z-index: 1040;
-      display: none;
-    }
-
-    /* Modal container overrides */
-    .edit-pic-modal {
-      position: fixed !important;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      z-index: 1050 !important;
-      display: none;
-      background: #fff;
-      width: 500px;
-      border-radius: 14px;
-      box-shadow:
-        0 12px 36px rgba(0,0,0,0.09),
-        0 1.5px 6px rgba(95,91,152,0.08);
-      padding: 36px 30px 28px 30px;
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    #btnClose {
-      position: absolute;
-      top: 17px;
-      right: 1px;
-      background: none;
-      border: none;
-      font-size: 1.3rem;
-      color: #bbb;
-      transition: color 0.2s;
-      cursor: pointer;
-      user-select: none;
-    }
-    #btnClose:hover {
-      color: #000;
-    }
-
-    .pic-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #271472;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 80px;
-      user-select: none;
-    }
-    .upload-pic-btn {
-      display: block;
-      font-size: 0.97rem;
-      border-radius: 20px;
-      padding: 4px 22px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-      margin-bottom: 0;
-    }
-    .upload-pic-btn:hover {
-      background: #e1d9fd;
-    }
-    input.form-control,
-    textarea.form-control {
-      font-size: 1rem;
-      background: #f7f7fb;
-      border: 1.4px solid #eaeaea;
-      border-radius: 8px;
-      box-shadow: none;
-      padding: 9px 13px;
-      transition: border 0.2s;
-      color: #353535;
-    }
-    input.form-control:focus,
-    textarea.form-control:focus {
-      border-color: #7855ff;
-      background: #fff;
-      outline: none;
-    }
-    .avail-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 6px 0 18px 0;
-    }
-    .avail-label {
-      font-weight: 500;
-      font-size: 0.97rem;
-      color: #444;
-    }
-    .avail-desc {
-      font-size: 0.86rem;
-      color: #9696a5;
-      margin-top: 1px;
-    }
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 42px;
-      height: 23px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      background-color: #ededed;
-      border-radius: 30px;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transition: background 0.2s;
-    }
-    .switch input:checked + .slider {
-      background-color: #7855ff;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      left: 4px;
-      bottom: 3.6px;
-      background-color: #fff;
-      border-radius: 50%;
-      transition: transform 0.2s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-    .switch input:checked + .slider:before {
-      transform: translateX(16px);
-    }
-    .avail-chip {
-      font-size: 0.92rem;
-      color: rgb(18, 225, 18);
-      background: red;
-      border-radius: 11px;
-      padding: 3px 10px 2px 10px;
-      font-weight: 500;
-      display: inline-block;
-      margin-left: 2.5px;
-    }
-    .butn {
-      height: 39px;
-      font-size: 1rem;
-      min-width: 119px;
-      border-radius: 100px;
-      font-weight: 500;
-      box-shadow: none;
-      user-select: none;
-    }
-    .cancel-btn {
-      background: #f7f7fb;
-      color: #27213c;
-      border: none;
-      margin-right: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s, color 0.2s;
-    }
-    .cancel-btn:hover {
-      background: #ede9fb;
-      color: #7855ff;
-    }
-    .save-btn {
-      background: #161616;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .save-btn:hover {
-      background: #353535;
-    }
-
-
-    /* Responsive */
-    @media (max-width: 500px) {
-      .edit-pic-modal {
-        width: 98vw;
-        padding: 21px 6vw 18px 6vw;
-      }
-    }
-
-    /* New responsive additions */
-    /* Make container-fluid width responsive */
-    .container-fluid {
-      max-width: 90vw;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    /* Adjust search bar and filter group responsiveness */
-    @media (max-width: 768px) {
-      .search-bar-custom {
-        width: 100% !important;
-      }
-      .d-flex.gap-3.col-sm-12.col-md-7.py-1.mb-4 {
-        padding-left: 0 !important;
-        justify-content: center !important;
-      }
-      .tabs-custom button {
-        flex: 1 1 auto;
-        white-space: nowrap;
-      }
-    }
-
-    /* Smaller screen card adjustments */
-    @media (max-width: 576px) {
-      .work-card img {
-        height: 140px;
-      }
-      .work-stats {
-        font-size: 0.85rem;
-      }
-      .btn.btn-light, .btn.btn-dark {
-        font-size: 0.75rem !important;
-        padding: 6px 12px !important;
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <style>
+      body {
+        background-color: #fafafb;
       }
       .profile-avatar {
-        width: 44px !important;
-        height: 44px !important;
-        padding: 10px !important;
-        font-size: 1.1rem !important;
+        width: 54px;
+        height: 54px;
+        background-color: #150653;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        padding: 15px;
       }
-      /* Stack "work" cards full-width on xs screens */
-      .row.g-4.mt-3 > div {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
+      .work-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
       }
-    }
+      .work-stats {
+        font-size: 0.95rem;
+        color: #888;
+      }
+      .tabs-custom button {
+        margin-right: 7px;
+        margin-bottom: 10px;
+      }
+      .search-bar-custom {
+        width: 260px;
+      }
+      .list1 a {
+        color: black;
+      }
 
-    /* Moderate screens: reduce container width for better fit */
-    @media (max-width: 992px) {
+      /* Modal backdrop */
+      #modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(1px);
+        z-index: 1040;
+        display: none;
+      }
+
+      /* Modal container overrides */
+      .edit-pic-modal {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 1050 !important;
+        display: none;
+        background: #fff;
+        width: 500px;
+        border-radius: 14px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09),
+          0 1.5px 6px rgba(95, 91, 152, 0.08);
+        padding: 36px 30px 28px 30px;
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      #btnClose {
+        position: absolute;
+        top: 17px;
+        right: 1px;
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        color: #bbb;
+        transition: color 0.2s;
+        cursor: pointer;
+        user-select: none;
+      }
+      #btnClose:hover {
+        color: #000;
+      }
+
+      .pic-avatar {
+        width: 80px;
+        height: 80px;
+        background-color: #271472;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 80px;
+        user-select: none;
+      }
+      .upload-pic-btn {
+        display: block;
+        font-size: 0.97rem;
+        border-radius: 20px;
+        padding: 4px 22px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-bottom: 0;
+      }
+      .upload-pic-btn:hover {
+        background: #e1d9fd;
+      }
+      input.form-control,
+      textarea.form-control {
+        font-size: 1rem;
+        background: #f7f7fb;
+        border: 1.4px solid #eaeaea;
+        border-radius: 8px;
+        box-shadow: none;
+        padding: 9px 13px;
+        transition: border 0.2s;
+        color: #353535;
+      }
+      input.form-control:focus,
+      textarea.form-control:focus {
+        border-color: #7855ff;
+        background: #fff;
+        outline: none;
+      }
+      .avail-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 6px 0 18px 0;
+      }
+      .avail-label {
+        font-weight: 500;
+        font-size: 0.97rem;
+        color: #444;
+      }
+      .avail-desc {
+        font-size: 0.86rem;
+        color: #9696a5;
+        margin-top: 1px;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 42px;
+        height: 23px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        background-color: #ededed;
+        border-radius: 30px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: background 0.2s;
+      }
+      .switch input:checked + .slider {
+        background-color: #7855ff;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 3.6px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      }
+      .switch input:checked + .slider:before {
+        transform: translateX(16px);
+      }
+      .avail-chip {
+        font-size: 0.92rem;
+        color: rgb(18, 225, 18);
+        background: red;
+        border-radius: 11px;
+        padding: 3px 10px 2px 10px;
+        font-weight: 500;
+        display: inline-block;
+        margin-left: 2.5px;
+      }
+      .butn {
+        height: 39px;
+        font-size: 1rem;
+        min-width: 119px;
+        border-radius: 100px;
+        font-weight: 500;
+        box-shadow: none;
+        user-select: none;
+      }
+      .cancel-btn {
+        background: #f7f7fb;
+        color: #27213c;
+        border: none;
+        margin-right: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+      }
+      .cancel-btn:hover {
+        background: #ede9fb;
+        color: #7855ff;
+      }
+      .save-btn {
+        background: #161616;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .save-btn:hover {
+        background: #353535;
+      }
+
+      /* Responsive */
+      @media (max-width: 500px) {
+        .edit-pic-modal {
+          width: 98vw;
+          padding: 21px 6vw 18px 6vw;
+        }
+      }
+
+      /* New responsive additions */
+      /* Make container-fluid width responsive */
       .container-fluid {
-        max-width: 720px;
+        max-width: 90vw;
+        padding-left: 15px;
+        padding-right: 15px;
       }
-    }
 
-    /* UPDATED - Profile Header Wrapper */
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1rem;
-    }
+      /* Adjust search bar and filter group responsiveness */
+      @media (max-width: 768px) {
+        .search-bar-custom {
+          width: 100% !important;
+        }
+        .d-flex.gap-3.col-sm-12.col-md-7.py-1.mb-4 {
+          padding-left: 0 !important;
+          justify-content: center !important;
+        }
+        .tabs-custom button {
+          flex: 1 1 auto;
+          white-space: nowrap;
+        }
+      }
 
-    /* UPDATED - Status Badge */
-    .status-badge {
-      color: green;
-      font-size: 0.85rem;
-      line-height: 1.3;
-      padding: 4px 12px;
-      border-radius: 999px;
-      border: 1.5px solid #e0e0e0;
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-    }
+      /* Smaller screen card adjustments */
+      @media (max-width: 576px) {
+        .work-card img {
+          height: 140px;
+        }
+        .work-stats {
+          font-size: 0.85rem;
+        }
+        .btn.btn-light,
+        .btn.btn-dark {
+          font-size: 0.75rem !important;
+          padding: 6px 12px !important;
+        }
+        .profile-avatar {
+          width: 44px !important;
+          height: 44px !important;
+          padding: 10px !important;
+          font-size: 1.1rem !important;
+        }
+        /* Stack "work" cards full-width on xs screens */
+        .row.g-4.mt-3 > div {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
 
+      /* Moderate screens: reduce container width for better fit */
+      @media (max-width: 992px) {
+        .container-fluid {
+          max-width: 720px;
+        }
+      }
 
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <div class="container my-4">
-    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill" style="background-color:#F8F8F8E5; width: 85%;">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">
-          <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;" />
-        </a>
-        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-          <ul class="navbar-nav mx-auto gap-3">
-            <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Overview</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
-          </ul>
-          <div class="d-flex align-items-center gap-3 sign">
-            <span class="fs-5"><i class="bi bi-bell-fill"></i></span>
-            <span class="me-2"><i class="bi bi-envelope-check-fill"></i></span>
-            <div class="dropdown">
-              <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" alt="" />
-              </div>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
-                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
+      /* UPDATED - Profile Header Wrapper */
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1rem;
+      }
 
-  <div class="container-fluid mb-5 mx-auto my-5" style="max-width:1300px;">
-    <!-- Welcome section -->
-    <div class="mb-3 d-flex justify-content-between" style="border-bottom: 1px solid rgb(223, 216, 216);">
-      <div>
-        <div class="fw-semibold fs-6">Welcome back, Divine!</div>
-        <p class="text-muted" style="font-size:0.96em;">Manage and grow your profile</p>
-      </div>
-      <span>
-        <button class="btn btn-light me-2" style="font-size: 80%;">Post job <i class="bi bi-arrow-up"></i></button>
-        <a href="./dashboard-upload.html"><button class="btn btn-dark me-2" style="border-radius: 17px; font-size: 80%;">Share your work +</button></a>
-      </span>
-    </div>
-
-    <!-- Updated Profile Header -->
-    <div class="profile-header">
-      <div class="profile-avatar me-2">DE</div>
-      <span class="status-badge" id="avail">
-        <i class="bi bi-dot"></i> Available now
-      </span>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center w-100 mb-3">
-      <div>
-        <p class="fw-bold fs-5">Divine Essen</p>
-      </div>
-      <div>
-        <button id="editProfileBtn" class="btn rounded-pill border ms-auto" style="font-size: 80%; margin-right: 10px;">
-          Edit profile <i class="bi bi-pencil"></i>
-        </button>
-      </div>
-    </div>
-    <p class="text-muted mb-3">A Ui/Ux designer passionate about building user centered and intuitive <br>digital products.</p>
-
-    <!-- Tabs -->
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3" 
-     style="border-bottom: 1px solid rgb(223, 216, 216); margin-top: 3%; padding-bottom: 1rem;">
-      <div class="tabs-custom d-flex flex-wrap gap-2">
-        <button class="btn rounded-pill border btn-sm" style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
-        <button class="btn rounded-pill border btn-sm">Liked post</button>
-        <button class="btn rounded-pill border btn-sm">Services</button>
-        <button class="btn rounded-pill border btn-sm">Saved profile</button>
-        <button class="btn rounded-pill border btn-sm">Posted jobs</button>
-      </div>
-
-      <!-- Filter + Search -->
-      <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2" style="max-width: 400px;">
-        <button class="btn w-auto px-3" style="background-color: white; border-radius: 13px;">
-          <i class="bi bi-filter"></i> Filter
-        </button>
-        <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
-          <input type="text" placeholder="Search creatives, services or tags" class="my-2"
-            style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
-          <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3" style="width: 3%; height: 25px;" alt="">
-        </div>
-      </div>
-    </div>
-
-     <div class="row g-4 mt-3">
-      <div class="col-sm-3">
-        <div class="work-card">
-          <img src="../Asset/Images/img 4.jpg" alt="Design work" />
-          <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
-            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
-            <span><i class="bi bi-eye"></i> 1.6k</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="work-card">
-          <img src="../Asset/Images/Frame 2.png" alt="Design work" />
-          <div class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats">
-            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
-            <span><i class="bi bi-eye"></i> 1.6k</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="work-card">
-          <img src="../Asset/Images/Frame 3.png" alt="Design work"/>
-          <div class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats">
-            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
-            <span><i class="bi bi-eye"></i> 1.6k</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="work-card">
-          <img src="../Asset/Images/img 6.jpg" alt="Design work" />
-          <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
-            <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
-            <span><i class="bi bi-eye"></i> 1.6k</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-    <footer class="footer py-4" style="background-color:#11182f">
-          <div class="container">
-            <div class="row align-items-center text-center text-md-start mb-3">
-              
-              
-              <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
-                <img src="../Asset/Images/Logo.png" width="120" height="38" alt="Logo">
-              </div>
-
-
-              
-              <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
-                <a href="#" class="mx-2 text-decoration-none ">For designers</a>
-                <a href="#" class="mx-2 text-decoration-none ">Hire talent</a>
-                <a href="#" class="mx-2 text-decoration-none ">Blog</a>
-                <a href="#" class="mx-2 text-decoration-none ">Support</a>
-                </div>
-
-
-              
-              <div class="col-12 col-md-3 text-center text-md-end">
-                <a href="#" class="mx-2 "><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="mx-2 "><i class="fab fa-instagram"></i></a>
-                <a href="#" class="mx-2 "><i class="fab fa-whatsapp"></i></a>
-              </div>
-
-
-            </div>
-
-
-            
-            <div class="row small text-center text-md-between">
-              <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
-                © 2025 Cre8tiv. All rights reserved.
-              </div>
-              <div class="col-12 col-md-6 text-center text-md-end">
-                <a href="#" class="text-decoration-none">Privacy Policy</a> | 
-                <a href="#" class="text-decoration-none">Terms and Conditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-  <!-- Modal backdrop -->
-  <div id="modal-backdrop"></div>
-
-
-  <!-- Modal popup -->
-  <div class="edit-pic-modal" role="dialog" aria-modal="true" aria-labelledby="editProfileLabel">
-    <div class="d-flex align-items-center mb-4">
-      <span class="fw-semibold fs-6">Edit profile</span>
-      <button
-        id="btnClose"
-        aria-label="Close edit profile modal"
-        class="btn ms-auto"
-        style="font-size: 1.9rem; color: #bbb;"
+      /* UPDATED - Status Badge */
+      .status-badge {
+        color: green;
+        font-size: 0.85rem;
+        line-height: 1.3;
+        padding: 4px 12px;
+        border-radius: 999px;
+        border: 1.5px solid #e0e0e0;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container my-4">
+      <nav
+        class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill"
+        style="background-color: #f8f8f8e5; width: 85%"
       >
-        &times;
-      </button>
-    </div>
-
-
-    <div class="d-flex align-items-center gap-3 mb-3">
-      <div class="pic-avatar text-white">DE</div>
-      <label for="fileUpload" class="text-dark fw-semibold" style="cursor: pointer;">Upload image</label>
-      <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png"/>
-    </div>
-
-
-    <form id="editProfileForm" aria-describedby="editProfileDesc">
-      <div class="mb-3">
-        <label for="fullname" class="form-label">Full name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="fullname"
-          placeholder="Divine Essen"
-          autocomplete="off"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="accountmail" class="form-label">Account email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="accountmail"
-          placeholder="essendivine@gmail.com"
-          autocomplete="off"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="profiledesc" class="form-label">Profile description</label>
-        <textarea
-          class="form-control"
-          id="profiledesc"
-          rows="3"
-          placeholder="Write a short description about you"
-        ></textarea>
-      </div>
-
-
-      <div class="avail-row">
-        <div>
-          <span class="avail-label">Availability</span><br />
-          <small class="avail-desc">Toggle between being available or not</small>
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              src="../Asset/Images/Logo Black.png"
+              alt="Logo"
+              class="img-fluid"
+              style="height: 40px"
+            />
+          </a>
+          <button
+            class="navbar-toggler border border-dark"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav mx-auto gap-3">
+              <li class="nav-item">
+                <a class="nav-link" style="color: blueviolet" href="#"
+                  >Overview</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Browse Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Hire Creatives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Blog</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3 sign">
+              <span class="fs-5"><i class="bi bi-bell-fill"></i></span>
+              <span class="me-2"
+                ><i class="bi bi-envelope-check-fill"></i
+              ></span>
+              <div class="dropdown">
+                <div
+                  class="dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="../Asset/Images/Ellipse 6.png"
+                    width="36px"
+                    height="36px"
+                    alt=""
+                  />
+                </div>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item gap-2 d-flex" href="#"
+                      ><i class="bi bi-gear"></i> Settings</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item gap-2 d-flex" href="#"
+                      ><i class="bi bi-box-arrow-right"></i> Log out</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <label class="switch mb-0 ms-3 align-self-baseline">
-          <input type="checkbox" id="toggleAvail" checked />
-          <span class="slider"></span>
-        </label>
+      </nav>
+    </div>
+
+    <div class="container-fluid mb-5 mx-auto my-5" style="max-width: 1300px">
+      <!-- Welcome section -->
+      <div
+        class="mb-3 d-flex justify-content-between"
+        style="border-bottom: 1px solid rgb(223, 216, 216)"
+      >
+        <div>
+          <div class="fw-semibold fs-6">Welcome back, Divine!</div>
+          <p class="text-muted" style="font-size: 0.96em">
+            Manage and grow your profile
+          </p>
+        </div>
+        <span>
+          <button class="btn btn-light me-2" style="font-size: 80%">
+            Post job <i class="bi bi-arrow-up"></i>
+          </button>
+          <a href="./dashboard-upload.html"
+            ><button
+              class="btn btn-dark me-2"
+              style="border-radius: 17px; font-size: 80%"
+            >
+              Share your work +
+            </button></a
+          >
+        </span>
       </div>
 
-
-      <div>
-        <span class="avail-chip" id="availChip"><span style="font-size:1.14em;font-weight:600;">•</span> Available now</span>
+      <!-- Updated Profile Header -->
+      <div class="profile-header">
+        <div class="profile-avatar me-2">DE</div>
+        <span class="status-badge" id="avail">
+          <i class="bi bi-dot"></i> Available now
+        </span>
       </div>
 
-
-      <div class="d-flex justify-content-end mt-4 gap-2">
-        <button type="button" class="butn cancel-btn" id="btnCancel">Cancel</button>
-        <button type="submit" class="butn save-btn">Save changes</button>
+      <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+        <div>
+          <p class="fw-bold fs-5">Divine Essen</p>
+        </div>
+        <div>
+          <button
+            id="editProfileBtn"
+            class="btn rounded-pill border ms-auto"
+            style="font-size: 80%; margin-right: 10px"
+          >
+            Edit profile <i class="bi bi-pencil"></i>
+          </button>
+        </div>
       </div>
-    </form>
-  </div>
+      <p class="text-muted mb-3">
+        A Ui/Ux designer passionate about building user centered and intuitive
+        <br />digital products.
+      </p>
 
+      <!-- Tabs -->
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-center gap-3"
+        style="
+          border-bottom: 1px solid rgb(223, 216, 216);
+          margin-top: 3%;
+          padding-bottom: 1rem;
+        "
+      >
+        <div class="tabs-custom d-flex flex-wrap gap-2">
+          <button
+            class="btn rounded-pill border btn-sm"
+            style="background-color: rgb(159, 192, 159); color: white"
+          >
+            Shared work
+          </button>
+          <button class="btn rounded-pill border btn-sm">Liked post</button>
+          <button class="btn rounded-pill border btn-sm">Services</button>
+          <button class="btn rounded-pill border btn-sm">Saved profile</button>
+          <button class="btn rounded-pill border btn-sm">Posted jobs</button>
+        </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Filter + Search -->
+        <div
+          class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2"
+          style="max-width: 400px"
+        >
+          <button
+            class="btn w-auto px-3"
+            style="background-color: white; border-radius: 13px"
+          >
+            <i class="bi bi-filter"></i> Filter
+          </button>
+          <div
+            class="rounded-pill d-flex gap-5"
+            style="min-width: 200px; max-width: 300px; background: white"
+          >
+            <input
+              type="text"
+              placeholder="Search creatives, services or tags"
+              class="my-2"
+              style="
+                box-shadow: none;
+                outline: none;
+                border: none;
+                height: 36px;
+                font-size: 0.9rem;
+              "
+            />
+            <img
+              src="../Asset/Images/image search.png"
+              class="img-fluid w-auto mt-3 px-3"
+              style="width: 3%; height: 25px"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
 
+      <div class="row g-4 mt-3">
+        <div class="col-sm-3">
+          <div class="work-card">
+            <img src="../Asset/Images/img 4.jpg" alt="Design work" />
+            <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
+              <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+              <span><i class="bi bi-eye"></i> 1.6k</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="work-card">
+            <img src="../Asset/Images/Frame 2.png" alt="Design work" />
+            <div
+              class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats"
+            >
+              <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+              <span><i class="bi bi-eye"></i> 1.6k</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="work-card">
+            <img src="../Asset/Images/Frame 3.png" alt="Design work" />
+            <div
+              class="d-flex justify-content-end gap-3 align-items-center mt-2 work-stats"
+            >
+              <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+              <span><i class="bi bi-eye"></i> 1.6k</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="work-card">
+            <img src="../Asset/Images/img 6.jpg" alt="Design work" />
+            <div class="d-flex justify-content-end gap-3 mt-2 work-stats">
+              <span><i class="bi bi-hand-thumbs-up"></i> 40</span>
+              <span><i class="bi bi-eye"></i> 1.6k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4" style="background-color: #11182f">
+      <div class="container">
+        <div class="row align-items-center text-center text-md-start mb-3">
+          <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
+            <img
+              src="../Asset/Images/Logo.png"
+              width="120"
+              height="38"
+              alt="Logo"
+            />
+          </div>
 
-  <script>
-    const modal = document.querySelector('.edit-pic-modal');
-    const backdrop = document.getElementById('modal-backdrop');
-    const btnClose = document.getElementById('btnClose');
-    const btnCancel = document.getElementById('btnCancel');
-    const editBtn = document.getElementById('editProfileBtn');
+          <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
+            <a href="#" class="mx-2 text-decoration-none">For designers</a>
+            <a href="#" class="mx-2 text-decoration-none">Hire talent</a>
+            <a href="#" class="mx-2 text-decoration-none">Blog</a>
+            <a href="#" class="mx-2 text-decoration-none">Support</a>
+          </div>
 
-    editBtn.addEventListener('click', () => {
-      modal.style.display = 'block';
-      backdrop.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // disable scroll
-    });
+          <div class="col-12 col-md-3 text-center text-md-end">
+            <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="mx-2"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
 
-    function closeModal() {
-      modal.style.display = 'none';
-      backdrop.style.display = 'none';
-      document.body.style.overflow = ''; // enable scroll
-    }
+        <div class="row small text-center text-md-between">
+          <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
+            © 2025 Cre8tiv. All rights reserved.
+          </div>
+          <div class="col-12 col-md-6 text-center text-md-end">
+            <a href="#" class="text-decoration-none">Privacy Policy</a> |
+            <a href="#" class="text-decoration-none">Terms and Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Modal backdrop -->
+    <div id="modal-backdrop"></div>
 
-    btnClose.addEventListener('click', closeModal);
-    btnCancel.addEventListener('click', closeModal);
+    <!-- Modal popup -->
+    <div
+      class="edit-pic-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="editProfileLabel"
+    >
+      <div class="d-flex align-items-center mb-4">
+        <span class="fw-semibold fs-6">Edit profile</span>
+        <button
+          id="btnClose"
+          aria-label="Close edit profile modal"
+          class="btn ms-auto"
+          style="font-size: 1.9rem; color: #bbb"
+        >
+          &times;
+        </button>
+      </div>
 
-    backdrop.addEventListener('click', closeModal);
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <div class="pic-avatar text-white">DE</div>
+        <label
+          for="fileUpload"
+          class="text-dark fw-semibold"
+          style="cursor: pointer"
+          >Upload image</label
+        >
+        <input
+          type="file"
+          id="fileUpload"
+          class="form-control d-none"
+          accept=".jpg, .png"
+        />
+      </div>
 
+      <form id="editProfileForm" aria-describedby="editProfileDesc">
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullname"
+            placeholder="Divine Essen"
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="accountmail" class="form-label">Account email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="accountmail"
+            placeholder="essendivine@gmail.com"
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="profiledesc" class="form-label"
+            >Profile description</label
+          >
+          <textarea
+            class="form-control"
+            id="profiledesc"
+            rows="3"
+            placeholder="Write a short description about you"
+          ></textarea>
+        </div>
 
-    // Availability toggle logic
-    const toggleAvail = document.getElementById('toggleAvail');
-    const availChip = document.getElementById('availChip');
-    const updateAvail = document.getElementById('avail');
+        <div class="avail-row">
+          <div>
+            <span class="avail-label">Availability</span><br />
+            <small class="avail-desc"
+              >Toggle between being available or not</small
+            >
+          </div>
+          <label class="switch mb-0 ms-3 align-self-baseline">
+            <input type="checkbox" id="toggleAvail" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
 
-    function updateAvailabilityChip(checked) {
-      if (checked) {
-        availChip.innerHTML = '<span style="font-size:1.14em;font-weight:600;">•</span> Available now';
-        availChip.style.color = 'green';
-        availChip.style.backgroundColor = 'transparent';
-        updateAvail.innerHTML = '<i class="bi bi-dot"></i> Available now';
-      } else {
-        availChip.innerHTML = '<span style="font-size:1.14em;font-weight:600;">•</span> Not available';
-        availChip.style.color = 'grey';
-        availChip.style.backgroundColor = 'transparent';
-        updateAvail.innerHTML = '<i class="bi bi-dot"></i> Not available';
+        <div>
+          <span class="avail-chip" id="availChip"
+            ><span style="font-size: 1.14em; font-weight: 600">•</span>
+            Available now</span
+          >
+        </div>
+
+        <div class="d-flex justify-content-end mt-4 gap-2">
+          <button type="button" class="butn cancel-btn" id="btnCancel">
+            Cancel
+          </button>
+          <button type="submit" class="butn save-btn">Save changes</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const modal = document.querySelector(".edit-pic-modal");
+      const backdrop = document.getElementById("modal-backdrop");
+      const btnClose = document.getElementById("btnClose");
+      const btnCancel = document.getElementById("btnCancel");
+      const editBtn = document.getElementById("editProfileBtn");
+
+      editBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+        backdrop.style.display = "block";
+        document.body.style.overflow = "hidden"; // disable scroll
+      });
+
+      function closeModal() {
+        modal.style.display = "none";
+        backdrop.style.display = "none";
+        document.body.style.overflow = ""; // enable scroll
       }
-    }
 
-    updateAvailabilityChip(toggleAvail.checked);
+      btnClose.addEventListener("click", closeModal);
+      btnCancel.addEventListener("click", closeModal);
 
-    toggleAvail.addEventListener('change', () => {
+      backdrop.addEventListener("click", closeModal);
+
+      // Availability toggle logic
+      const toggleAvail = document.getElementById("toggleAvail");
+      const availChip = document.getElementById("availChip");
+      const updateAvail = document.getElementById("avail");
+
+      function updateAvailabilityChip(checked) {
+        if (checked) {
+          availChip.innerHTML =
+            '<span style="font-size:1.14em;font-weight:600;">•</span> Available now';
+          availChip.style.color = "green";
+          availChip.style.backgroundColor = "transparent";
+          updateAvail.innerHTML = '<i class="bi bi-dot"></i> Available now';
+        } else {
+          availChip.innerHTML =
+            '<span style="font-size:1.14em;font-weight:600;">•</span> Not available';
+          availChip.style.color = "grey";
+          availChip.style.backgroundColor = "transparent";
+          updateAvail.innerHTML = '<i class="bi bi-dot"></i> Not available';
+        }
+      }
+
       updateAvailabilityChip(toggleAvail.checked);
-    });
 
+      toggleAvail.addEventListener("change", () => {
+        updateAvailabilityChip(toggleAvail.checked);
+      });
 
-    // Handle form submission (demo)
-    const form = document.getElementById('editProfileForm');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Profile changes saved!');
-      closeModal();
-    });
-  </script>
-</body>
+      // Handle form submission (demo)
+      const form = document.getElementById("editProfileForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Profile changes saved!");
+        closeModal();
+      });
+    </script>
+  </body>
 </html>

@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hire Creatives</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../CSS/jobs.css">
-    <link rel="stylesheet" href="../CSS/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Creatives</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../CSS/jobs.css">
+  <link rel="stylesheet" href="../CSS/index.css">
 </head>
+
 <body>
-    <main class="w-100">
-        <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill  " style="background-color:#F8F8F8E5; width: 70%;">
-        <div class="container">
-           <a class="navbar-brand" href="../index.html">
-             <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;">
-           </a>
-            <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-             </button>
-
-      
-           <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-              <ul class ="navbar-nav mx-auto gap-3">
-                <li class="nav-item"><a class="nav-link text-dark" href="/chucks/index.html">Overview</a></li>
-                <li class="nav-item"><a class="nav-link" href="./browse-jobs.html">Browse Jobs</a></li>
-               <li class="nav-item"><a class="nav-link text-primary" href="./Hire-Creatives.html">Hire Creatives</a></li>
-               <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+  <main class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill"
+      style="background-color:#F8F8F8E5; width: 85%;">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;" />
+        </a>
+        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item"><a class="nav-link" style="color: blueviolet;" href="#">Overview</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Browse Jobs</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Hire Creatives</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Blog</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3 sign">
+            <span class="fs-5"><i class="bi bi-bell-fill"></i></span>
+            <span class="me-2"><i class="bi bi-envelope-check-fill"></i></span>
+            <div class="dropdown">
+              <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" alt="" />
+              </div>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a>
+                </li>
               </ul>
-
-             <div class="d-flex align-items-center gap-3 sign">
-                <i class="bi bi-bell-fill"></i>
-               <i class="bi bi-envelope-check-fill"></i>
-            
-                 
-                 <div class="dropdown">
-                    <div class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../Asset/Images/Ellipse 6.png" width="39px" height="39px" class="img-fluid" alt="">
-                       </div>
-
-                        <ul class="dropdown-menu">
-                 <li><a class="dropdown-item" href="#">Option 1</a></li>
-    <li><a class="dropdown-item" href="#">Option 2</a></li>
-    <li><a class="dropdown-item" href="#">Option 3</a></li>
-  </ul>
-</div>
-              </div> 
-             </div>
             </div>
+          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <div class="container py-4 mt-4">
+    <div class="container py-4 mt-4">
       <div class="mb-4">
         <h2 class="fw-bold">Explore Top Categories</h2>
         <div class="text-muted mb-3" style="font-size: 1.1rem;">Opportunities tailored to your creative strengths</div>
@@ -62,112 +59,116 @@
             <button class="filter-btn text-muted" id="show-gigs">Gigs available</button>
           </div>
 
-          <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2" style="max-width: 400px;">
+          <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2"
+            style="max-width: 400px;">
             <button class="btn w-auto px-3" style="background-color: white; border-radius: 13px;">
               <i class="bi bi-filter"></i> Filter
             </button>
-        
-        <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
-          <input type="text" placeholder="Search creatives, services or tags" class="my-2"
-            style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
-          <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3" style="width: 3%; height: 25px;" alt="">
+
+            <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
+              <input type="text" placeholder="Search creatives, services or tags" class="my-2"
+                style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
+              <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3"
+                style="width: 3%; height: 25px;" alt="">
+            </div>
+          </div>
         </div>
-      </div>
-        </div>
-         
-     <!-- Creatives Section -->
-      <div id="creatives-section">
-        <div class="category-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="../Asset/Images/Ellipse 8.png" alt="Profile" class="profile-img me-3">
-            <div>
-              <div class="fw-semibold">Nuel Chucks</div>
-              <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
-              <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
-                <span class="text-warning me-1">&#9733; 5.0</span>
-                <span class="text-muted ms-2">10 Projects completed</span>
+
+        <!-- Creatives Section -->
+        <div id="creatives-section">
+          <div class="category-card">
+            <div class="d-flex align-items-center mb-3">
+              <img src="../Asset/Images/Ellipse 8.png" alt="Profile" class="profile-img me-3">
+              <div>
+                <div class="fw-semibold">Nuel Chucks</div>
+                <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
+                <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
+                  <span class="text-warning me-1">&#9733; 5.0</span>
+                  <span class="text-muted ms-2">10 Projects completed</span>
+                </div>
+              </div>
+              <div class="ms-auto d-flex align-items-center">
+                <button class="bookmark-btn">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
+                  </svg>
+                </button>
+                <button class="get-in-touch-btn">Get in touch</button>
               </div>
             </div>
-            <div class="ms-auto d-flex align-items-center">
-              <button class="bookmark-btn">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
-                </svg>
-              </button>
-              <button class="get-in-touch-btn">Get in touch</button>
-            </div>
-          </div>
-          <div class="row g-3">
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/IMG 2.jpg" class="creative-img" alt="Design">
-            </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/Frame 2.png" class="creative-img" alt="Design">
-            </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/Frame 3.png" class="creative-img" alt="Design">
-            </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/Frame 4.png" class="creative-img" alt="Design">
-            </div>
-          </div>
-          <div class="mt-3">
-            <span class="tag">Web design</span>
-            <span class="tag">Mobile app</span>
-            <span class="tag">Landing page</span>
-          </div>
-        </div>
-
-        <div class="category-card">
-          <div class="d-flex align-items-center mb-3">
-            <img src="../Asset/Images/Ellipse 7.png" alt="Profile" class="profile-img me-3">
-            <div>
-              <div class="fw-semibold">Divine Essen</div>
-              <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
-              <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
-                <span class="text-warning me-1">&#9733; 5.0</span>
-                <span class="text-muted ms-2">10 Projects completed</span>
+            <div class="row g-3">
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/IMG 2.jpg" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/Frame 2.png" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/Frame 3.png" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/Frame 4.png" class="creative-img" alt="Design">
               </div>
             </div>
-            <div class="ms-auto d-flex align-items-center">
-              <button class="bookmark-btn">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
-                </svg>
-              </button>
-              <button class="get-in-touch-btn">Get in touch</button>
+            <div class="mt-3">
+              <span class="tag">Web design</span>
+              <span class="tag">Mobile app</span>
+              <span class="tag">Landing page</span>
             </div>
           </div>
-          <div class="row g-3">
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/img 4.jpg" class="creative-img" alt="Design">
+
+          <div class="category-card">
+            <div class="d-flex align-items-center mb-3">
+              <img src="../Asset/Images/Ellipse 7.png" alt="Profile" class="profile-img me-3">
+              <div>
+                <div class="fw-semibold">Divine Essen</div>
+                <div class="text-muted" style="font-size: 0.95rem;">Port harcourt, Nigeria</div>
+                <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
+                  <span class="text-warning me-1">&#9733; 5.0</span>
+                  <span class="text-muted ms-2">10 Projects completed</span>
+                </div>
+              </div>
+              <div class="ms-auto d-flex align-items-center">
+                <button class="bookmark-btn">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+                  </svg>
+                </button>
+                <button class="get-in-touch-btn">Get in touch</button>
+              </div>
             </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/img 6.jpg" class="creative-img" alt="Design">
+            <div class="row g-3">
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/img 4.jpg" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/img 6.jpg" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/IMG 1.jpg" class="creative-img" alt="Design">
+              </div>
+              <div class="col-6 col-md-3">
+                <img src="../Asset/Images/Image 71 (4).png" class="creative-img" alt="Design">
+              </div>
             </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/IMG 1.jpg" class="creative-img" alt="Design">
+            <div class="mt-3">
+              <span class="tag">Web design</span>
+              <span class="tag">Mobile app</span>
+              <span class="tag">Landing page</span>
             </div>
-            <div class="col-6 col-md-3">
-              <img src="../Asset/Images/Image 71 (4).png" class="creative-img" alt="Design">
-            </div>
-          </div>
-          <div class="mt-3">
-            <span class="tag">Web design</span>
-            <span class="tag">Mobile app</span>
-            <span class="tag">Landing page</span>
           </div>
         </div>
+        <button class="load-more-btn mb-4">Explore more</button>
       </div>
-      <button class="load-more-btn mb-4">Explore more</button>
-    </div>
 
 
 
 
 
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    </main>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+  </main>
 </body>
+
 </html>

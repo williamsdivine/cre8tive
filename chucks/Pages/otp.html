@@ -1,140 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  
+
 
 </head>
+
 <body>
-    <main class="vh-100 w-100 d-flex justify-content-center fs-5 ">
-        <section class="container row " >
-            <div class="container col-md-6  col-lg-6 col-sm-12  py-4 vh-100 w-50">
-               <a href="../index.html"> <img src="../Asset/Images/Logo Black.png" width="95px" height="35px" class="img-fluid  py-4  " alt=""></a>
-                    <div class=" border border-dark-light px-4 py-3 " style="border-radius: 15px; font-size: 70%;">
-                        <h5 class="head">Check your email</h5>
-                        <p id="emailDisplay">We've sent an OTP to your email essendivine@gmail.com</p>
-                        
-                         
-                        
-                        <div >
-                    
-                            <input type="email" placeholder="Enter the OTP sent to your email " class=" mt-2 px-3   " style="width: 97%; height: 43px; border-radius: 17px; border: 1px solid #ccc; outline: 0px; ">
-                        </div>
-
-                        <button class="btn rounded-pill mt-4" id="submitOtpBtn" style="width: 97%; height: 46px;  border: 0px; color: white; background-color: blueviolet;font-size: 100%;">Submit OTP</button>
-
-                   </div>
-                   <div class=" d-flex justify-content-between py-2 px-4 footer-text" style="font-size: 70%;">
-                       <p>00:30</p>
-                       <P> Didn't receive code? <a style="color: black; text-decoration: none;" href="">Resend</a></p>
-                   </div>
-                  
-                </div>
-            </div>
-           <div class="container col-3 " >
-            <img src="../Asset/Images/image auth.png" class="img-fluid  vh-100" style="position: fixed; width: 18%;" alt="">
-           </div>
-        </section>
-        
-          
-        
+  <main class="vh-100 w-100 d-flex justify-content-center fs-5 ">
+    <section class="container row ">
+      <div class="container col-md-6  col-lg-6 col-sm-12  py-4 vh-100 w-50">
+        <a href="../index.html"> <img src="../Asset/Images/Logo Black.png" width="95px" height="35px"
+            class="img-fluid  py-4  " alt=""></a>
+        <div class=" border border-dark-light px-4 py-3 " style="border-radius: 15px; font-size: 70%;">
+          <h5 class="head">Check your email</h5>
+          <p id="emailDisplay">We've sent an OTP to your email essendivine@gmail.com</p>
 
 
 
+          <div>
+
+            <input type="email" placeholder="Enter the OTP sent to your email " class=" mt-2 px-3   "
+              style="width: 97%; height: 43px; border-radius: 17px; border: 1px solid #ccc; outline: 0px; ">
+          </div>
+
+          <button class="btn rounded-pill mt-4" id="submitOtpBtn"
+            style="width: 97%; height: 46px;  border: 0px; color: white; background-color: blueviolet;font-size: 100%;">Submit
+            OTP</button>
+
+        </div>
+        <div class=" d-flex justify-content-between py-2 px-4 footer-text" style="font-size: 70%;">
+          <p>00:30</p>
+          <P> Didn't receive code? <a style="color: black; text-decoration: none;" href="">Resend</a></p>
+        </div>
+
+      </div>
+      </div>
+      <div class="container col-3 ">
+        <img src="../Asset/Images/image auth.png" class="img-fluid  vh-100" style="position: fixed; width: 18%;" alt="">
+      </div>
+    </section>
 
 
 
-         
-         
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-      </main>
 
-          <script>
-  // Display user email from localStorage
-  const userEmail = localStorage.getItem('userEmail');
-  if (userEmail) {
-    document.getElementById('emailDisplay').textContent = `We've sent an OTP to your email ${userEmail}`;
-  }
 
-  let timerDisplay = document.querySelector('.footer-text p');
-  let otpInput = document.querySelector('input[type="email"]');
-  let submitBtn = document.getElementById('submitOtpBtn');
 
-  let timeLeft = 30; 
 
-  const countdown = setInterval(() => {
-    let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
-    timerDisplay.textContent = `00:${seconds}`;
 
-    if (timeLeft <= 0) {
-      clearInterval(countdown);
-      timerDisplay.textContent = "OTP expired";
 
-      otpInput.disabled = true;
-      submitBtn.disabled = true;
-      submitBtn.style.backgroundColor = "gray";
-      submitBtn.style.cursor = "not-allowed";
-    }
 
-    timeLeft--;
-  }, 1000);
 
-  // Handle OTP submission
-  submitBtn.addEventListener('click', function() {
-    const otp = otpInput.value;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+  </main>
+
+  <script>
+    // Display user email from localStorage
     const userEmail = localStorage.getItem('userEmail');
-    
-    if (!otp) {
-      alert('Please enter the OTP');
-      return;
+    if (userEmail) {
+      document.getElementById('emailDisplay').textContent = `We've sent an OTP to your email ${userEmail}`;
     }
-    
-    // Show loading state
-    const button = this;
-    const originalText = button.textContent;
-    button.textContent = 'Verifying...';
-    button.disabled = true;
-    
-    // Prepare data for API
-    const otpData = {
-      email: userEmail,
-      otp: otp
-    };
-    
-    // Make API call to verify OTP
-    fetch('http://your-backend-url/api/verify-otp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(otpData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        // Clear localStorage
-        localStorage.removeItem('userEmail');
-        // Redirect to login page or dashboard
-        window.location.href = '../Pages/login.html';
-      } else {
-        alert(data.message || 'Invalid OTP. Please try again.');
+
+    let timerDisplay = document.querySelector('.footer-text p');
+    let otpInput = document.querySelector('input[type="email"]');
+    let submitBtn = document.getElementById('submitOtpBtn');
+
+    let timeLeft = 30;
+
+    const countdown = setInterval(() => {
+      let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+      timerDisplay.textContent = `00:${seconds}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerDisplay.textContent = "OTP expired";
+
+        otpInput.disabled = true;
+        submitBtn.disabled = true;
+        submitBtn.style.backgroundColor = "gray";
+        submitBtn.style.cursor = "not-allowed";
       }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again.');
-    })
-    .finally(() => {
-      // Reset button state
-      button.textContent = originalText;
-      button.disabled = false;
+
+      timeLeft--;
+    }, 1000);
+
+    // Handle OTP submission
+    submitBtn.addEventListener('click', function () {
+      const otp = otpInput.value;
+      const userEmail = localStorage.getItem('userEmail');
+
+      if (!otp) {
+        alert('Please enter the OTP');
+        return;
+      }
+
+      // Show loading state
+      const button = this;
+      const originalText = button.textContent;
+      button.textContent = 'Verifying...';
+      button.disabled = true;
+
+      // Prepare data for API
+      const otpData = {
+        email: userEmail,
+        otp: otp
+      };
+
+      // Make API call to verify OTP
+      fetch('http://your-backend-url/api/verify-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(otpData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // Clear localStorage
+            localStorage.removeItem('userEmail');
+            // Redirect to login page or dashboard
+            window.location.href = '../Pages/login.html';
+          } else {
+            alert(data.message || 'Invalid OTP. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        })
+        .finally(() => {
+          // Reset button state
+          button.textContent = originalText;
+          button.disabled = false;
+        });
     });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>

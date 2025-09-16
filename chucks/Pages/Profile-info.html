@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>CRE8TIV - Divine Essen Profile</title>
@@ -15,6 +16,7 @@
     body {
       background-color: #fafafb;
     }
+
     .profile-avatar {
       width: 54px;
       height: 754px;
@@ -28,23 +30,28 @@
       font-weight: 600;
       padding: 15px;
     }
+
     .work-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       border-radius: 10px;
     }
+
     .work-stats {
       font-size: 0.95rem;
       color: #888;
     }
+
     .tabs-custom button {
       margin-right: 7px;
       margin-bottom: 10px;
     }
+
     .search-bar-custom {
       width: 260px;
     }
+
     .list1 a {
       color: black;
     }
@@ -52,9 +59,11 @@
     /* Modal backdrop */
     #modal-backdrop {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(0,0,0,0.4);
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(1px);
       z-index: 1040;
       display: none;
@@ -72,8 +81,8 @@
       width: 500px;
       border-radius: 14px;
       box-shadow:
-        0 12px 36px rgba(0,0,0,0.09),
-        0 1.5px 6px rgba(95,91,152,0.08);
+        0 12px 36px rgba(0, 0, 0, 0.09),
+        0 1.5px 6px rgba(95, 91, 152, 0.08);
       padding: 36px 30px 28px 30px;
       box-sizing: border-box;
       margin: 0;
@@ -91,6 +100,7 @@
       cursor: pointer;
       user-select: none;
     }
+
     #btnClose:hover {
       color: #000;
     }
@@ -107,6 +117,7 @@
       line-height: 80px;
       user-select: none;
     }
+
     .upload-pic-btn {
       display: block;
       font-size: 0.97rem;
@@ -117,9 +128,11 @@
       transition: background 0.2s;
       margin-bottom: 0;
     }
+
     .upload-pic-btn:hover {
       background: #e1d9fd;
     }
+
     input.form-control,
     textarea.form-control {
       font-size: 1rem;
@@ -131,39 +144,46 @@
       transition: border 0.2s;
       color: #353535;
     }
+
     input.form-control:focus,
     textarea.form-control:focus {
       border-color: #7855ff;
       background: #fff;
       outline: none;
     }
+
     .avail-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin: 6px 0 18px 0;
     }
+
     .avail-label {
       font-weight: 500;
       font-size: 0.97rem;
       color: #444;
     }
+
     .avail-desc {
       font-size: 0.86rem;
       color: #9696a5;
       margin-top: 1px;
     }
+
     .switch {
       position: relative;
       display: inline-block;
       width: 42px;
       height: 23px;
     }
+
     .switch input {
       opacity: 0;
       width: 0;
       height: 0;
     }
+
     .slider {
       position: absolute;
       cursor: pointer;
@@ -175,9 +195,11 @@
       bottom: 0;
       transition: background 0.2s;
     }
-    .switch input:checked + .slider {
+
+    .switch input:checked+.slider {
       background-color: #7855ff;
     }
+
     .slider:before {
       position: absolute;
       content: "";
@@ -188,11 +210,13 @@
       background-color: #fff;
       border-radius: 50%;
       transition: transform 0.2s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
     }
-    .switch input:checked + .slider:before {
+
+    .switch input:checked+.slider:before {
       transform: translateX(16px);
     }
+
     .avail-chip {
       font-size: 0.92rem;
       color: rgb(18, 225, 18);
@@ -203,6 +227,7 @@
       display: inline-block;
       margin-left: 2.5px;
     }
+
     .butn {
       height: 39px;
       font-size: 1rem;
@@ -212,6 +237,7 @@
       box-shadow: none;
       user-select: none;
     }
+
     .cancel-btn {
       background: #f7f7fb;
       color: #27213c;
@@ -220,10 +246,12 @@
       cursor: pointer;
       transition: background-color 0.2s, color 0.2s;
     }
+
     .cancel-btn:hover {
       background: #ede9fb;
       color: #7855ff;
     }
+
     .save-btn {
       background: #161616;
       color: #fff;
@@ -231,6 +259,7 @@
       cursor: pointer;
       transition: background-color 0.2s;
     }
+
     .save-btn:hover {
       background: #353535;
     }
@@ -284,10 +313,12 @@
       .search-bar-custom {
         width: 100% !important;
       }
+
       .d-flex.gap-3.col-sm-12.col-md-7.py-1.mb-4 {
         padding-left: 0 !important;
         justify-content: center !important;
       }
+
       .tabs-custom button {
         flex: 1 1 auto;
         white-space: nowrap;
@@ -299,21 +330,26 @@
       .work-card img {
         height: 140px;
       }
+
       .work-stats {
         font-size: 0.85rem;
       }
-      .btn.btn-light, .btn.btn-dark {
+
+      .btn.btn-light,
+      .btn.btn-dark {
         font-size: 0.75rem !important;
         padding: 6px 12px !important;
       }
+
       .profile-avatar {
         width: 44px !important;
         height: 44px !important;
         padding: 10px !important;
         font-size: 1.1rem !important;
       }
+
       /* Stack "work" cards full-width on xs screens */
-      .row.g-4.mt-3 > div {
+      .row.g-4.mt-3>div {
         flex: 0 0 100% !important;
         max-width: 100% !important;
       }
@@ -327,15 +363,18 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <div class="container my-4">
-    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill" style="background-color:#F8F8F8E5; width: 85%;">
+    <nav class="navbar navbar-expand-lg navbar-light container px-4 mt-3 rounded-pill"
+      style="background-color:#F8F8F8E5; width: 85%;">
       <div class="container">
         <a class="navbar-brand" href="./index.html">
           <img src="../Asset/Images/Logo Black.png" alt="Logo" class="img-fluid" style="height: 40px;" />
         </a>
-        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
@@ -353,9 +392,10 @@
                 <img src="../Asset/Images/Ellipse 6.png" width="36px" height="36px" alt="" />
               </div>
               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
-                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
-                </ul>
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                <li><a class="dropdown-item gap-2 d-flex" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -365,7 +405,7 @@
 
   <div class="container-fluid mb-5 mx-auto my-5" style="max-width:1300px;">
     <!-- Welcome section -->
-   
+
     <!-- Updated Profile Header -->
     <div class="profile-header">
       <img src="../Asset/Images/Ellipse 6.png" alt="Profile" class="profile-img me-2" />
@@ -373,48 +413,51 @@
         <i class="bi bi-dot"></i> Available now
       </span>
     </div>
-     <div class="ms-auto d-flex align-items-center justify-content-between">
-        <p class="fw-bold fs-5">Divine Essen</p>
-        <div class="d-flex">
-              <button class="bookmark-btn">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
-                </svg>
-              </button>
-              <button class="get-in-touch-btn">Get in touch</button>
-        </div>
-            </div>
+    <div class="ms-auto d-flex align-items-center justify-content-between">
+      <p class="fw-bold fs-5">Divine Essen</p>
+      <div class="d-flex">
+        <button class="bookmark-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
+          </svg>
+        </button>
+        <button class="get-in-touch-btn">Get in touch</button>
+      </div>
+    </div>
     <p>A Ui/Ux designer passionate about building user centered and intuitive digital products.</p>
     <div class="d-flex align-items-center mt-1" style="font-size: 0.95rem;">
       <span class="text-warning me-1">&#9733; 5.0</span>
-      <span class="text-muted ms-2">10 Projects completed</span>   
+      <span class="text-muted ms-2">10 Projects completed</span>
       <span class="text-muted ms-2 text-dark"><i class="bi bi-hand-thumbs-up"></i>100 likes</span>
     </div>
 
     <!-- Tabs -->
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3" 
-     style="border-bottom: 1px solid rgb(223, 216, 216); margin-top: 3%; padding-bottom: 1rem;">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3"
+      style="border-bottom: 1px solid rgb(223, 216, 216); margin-top: 3%; padding-bottom: 1rem;">
 
       <div class="tabs-custom d-flex flex-wrap gap-2">
-        <button class="btn rounded-pill border btn-sm" style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
+        <button class="btn rounded-pill border btn-sm"
+          style="background-color: rgb(159, 192, 159); color: white;">Shared work</button>
         <button class="btn rounded-pill border btn-sm">Liked post</button>
         <button class="btn rounded-pill border btn-sm">Services</button>
         <button class="btn rounded-pill border btn-sm">Saved profile</button>
         <button class="btn rounded-pill border btn-sm">Posted jobs</button>
       </div>
 
-      <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2" style="max-width: 400px;">
+      <div class="d-flex flex-grow-1 flex-md-grow-0 justify-content-md-end justify-content-center gap-2"
+        style="max-width: 400px;">
         <button class="btn w-auto px-3" style="background-color: white; border-radius: 13px;">
           <i class="bi bi-filter"></i> Filter
         </button>
         <div class="rounded-pill d-flex gap-5" style="min-width: 200px; max-width: 300px; background: white;">
           <input type="text" placeholder="Search creatives, services or tags" class="my-2"
             style="box-shadow:none; outline:none; border: none; height: 36px; font-size: 0.9rem;">
-          <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3" style="width: 3%; height: 25px;" alt="">
+          <img src="../Asset/Images/image search.png" class="img-fluid w-auto mt-3 px-3"
+            style="width: 3%; height: 25px;" alt="">
         </div>
       </div>
     </div>
-        <div class="row g-4 mt-3">
+    <div class="row g-4 mt-3">
       <div class="col-sm-3">
         <div class="work-card">
           <img src="../Asset/Images/IMG 2.jpg" alt="Design work" />
@@ -492,53 +535,53 @@
       </div>
     </div>
   </div>
-   </div>
+  </div>
 
-    
+
 
 
   <footer class="footer py-4" style="background-color:#11182f">
-          <div class="container">
-            <div class="row align-items-center text-center text-md-start mb-3">
-              
-              
-              <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
-                <img src="../Asset/Images/Logo.png" width="120" height="38" alt="Logo">
-              </div>
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start mb-3">
 
 
-              
-              <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
-                <a href="#" class="mx-2 text-decoration-none ">For designers</a>
-                <a href="#" class="mx-2 text-decoration-none ">Hire talent</a>
-                <a href="#" class="mx-2 text-decoration-none ">Blog</a>
-                <a href="#" class="mx-2 text-decoration-none ">Support</a>
-                </div>
+        <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
+          <img src="../Asset/Images/Logo.png" width="120" height="38" alt="Logo">
+        </div>
 
 
-              
-              <div class="col-12 col-md-3 text-center text-md-end">
-                <a href="#" class="mx-2 "><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="mx-2 "><i class="fab fa-instagram"></i></a>
-                <a href="#" class="mx-2 "><i class="fab fa-whatsapp"></i></a>
-              </div>
+
+        <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
+          <a href="#" class="mx-2 text-decoration-none ">For designers</a>
+          <a href="#" class="mx-2 text-decoration-none ">Hire talent</a>
+          <a href="#" class="mx-2 text-decoration-none ">Blog</a>
+          <a href="#" class="mx-2 text-decoration-none ">Support</a>
+        </div>
 
 
-            </div>
+
+        <div class="col-12 col-md-3 text-center text-md-end">
+          <a href="#" class="mx-2 "><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="mx-2 "><i class="fab fa-instagram"></i></a>
+          <a href="#" class="mx-2 "><i class="fab fa-whatsapp"></i></a>
+        </div>
 
 
-            
-            <div class="row small text-center text-md-between">
-              <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
-                © 2025 Cre8tiv. All rights reserved.
-              </div>
-              <div class="col-12 col-md-6 text-center text-md-end">
-                <a href="#" class="text-decoration-none">Privacy Policy</a> | 
-                <a href="#" class="text-decoration-none">Terms and Conditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+      </div>
+
+
+
+      <div class="row small text-center text-md-between">
+        <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
+          © 2025 Cre8tiv. All rights reserved.
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-end">
+          <a href="#" class="text-decoration-none">Privacy Policy</a> |
+          <a href="#" class="text-decoration-none">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
   <!-- Modal backdrop -->
   <div id="modal-backdrop"></div>
 
@@ -547,12 +590,8 @@
   <div class="edit-pic-modal" role="dialog" aria-modal="true" aria-labelledby="editProfileLabel">
     <div class="d-flex align-items-center mb-4">
       <span class="fw-semibold fs-6">Edit profile</span>
-      <button
-        id="btnClose"
-        aria-label="Close edit profile modal"
-        class="btn ms-auto"
-        style="font-size: 1.9rem; color: #bbb;"
-      >
+      <button id="btnClose" aria-label="Close edit profile modal" class="btn ms-auto"
+        style="font-size: 1.9rem; color: #bbb;">
         &times;
       </button>
     </div>
@@ -561,39 +600,24 @@
     <div class="d-flex align-items-center gap-3 mb-3">
       <div class="pic-avatar text-white">DE</div>
       <label for="fileUpload" class="text-dark fw-semibold" style="cursor: pointer;">Upload image</label>
-      <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png"/>
+      <input type="file" id="fileUpload" class="form-control d-none" accept=".jpg, .png" />
     </div>
 
 
     <form id="editProfileForm" aria-describedby="editProfileDesc">
       <div class="mb-3">
         <label for="fullname" class="form-label">Full name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="fullname"
-          placeholder="Divine Essen"
-          autocomplete="off"
-        />
+        <input type="text" class="form-control" id="fullname" placeholder="Divine Essen" autocomplete="off" />
       </div>
       <div class="mb-3">
         <label for="accountmail" class="form-label">Account email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="accountmail"
-          placeholder="essendivine@gmail.com"
-          autocomplete="off"
-        />
+        <input type="email" class="form-control" id="accountmail" placeholder="essendivine@gmail.com"
+          autocomplete="off" />
       </div>
       <div class="mb-3">
         <label for="profiledesc" class="form-label">Profile description</label>
-        <textarea
-          class="form-control"
-          id="profiledesc"
-          rows="3"
-          placeholder="Write a short description about you"
-        ></textarea>
+        <textarea class="form-control" id="profiledesc" rows="3"
+          placeholder="Write a short description about you"></textarea>
       </div>
 
 
@@ -610,7 +634,8 @@
 
 
       <div>
-        <span class="avail-chip" id="availChip"><span style="font-size:1.14em;font-weight:600;">•</span> Available now</span>
+        <span class="avail-chip" id="availChip"><span style="font-size:1.14em;font-weight:600;">•</span> Available
+          now</span>
       </div>
 
 
@@ -697,4 +722,5 @@
     });
   </script>
 </body>
+
 </html>
